@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Tasbeeh">
+<meta name="theme-color" content="#0b0b0c">
+<title>Tasbeeh</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" href="icons/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- ───────── DUAS ───────── -->
+  <section id="view-duas" class="view active">
+    <header class="topbar">
+      <button id="btn-index" class="icon-btn" aria-label="All duas">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg>
+      </button>
+      <div id="dua-group" class="top-title group-title">Duas</div>
+      <div id="dua-pos" class="pos">1 / 1</div>
+    </header>
+    <div class="progress"><div id="dua-progress"></div></div>
+    <div id="dua-stage" class="stage">
+      <article id="dua-card" class="dua"></article>
+    </div>
+    <div id="tap-hint" class="tap-hint"><span>‹ tap left · previous</span><span>next · tap right ›</span></div>
+  </section>
+
+  <!-- ───────── TASBEEH ───────── -->
+  <section id="view-tasbeeh" class="view">
+    <header class="topbar">
+      <button id="btn-target" class="pill">Target 33</button>
+      <div class="top-title">Tasbeeh</div>
+      <button id="btn-reset" class="pill">Reset</button>
+    </header>
+    <div id="dhikr-carousel" class="carousel"></div>
+    <div id="dhikr-dots" class="dots"></div>
+
+    <div id="counter-area" class="counter-area">
+      <div id="count-wrap" class="count-wrap">
+        <svg class="ring" viewBox="0 0 200 200">
+          <circle class="ring-bg" cx="100" cy="100" r="90"/>
+          <circle id="ring-fg" class="ring-fg" cx="100" cy="100" r="90"/>
+        </svg>
+        <div class="count-text">
+          <div id="count" class="count">0</div>
+          <div id="count-sub" class="count-sub">of 33</div>
+        </div>
+      </div>
+      <div class="strand">
+        <div class="thread"></div>
+        <div id="strand-inner" class="strand-inner"></div>
+        <div class="strand-marker"></div>
+      </div>
+      <div id="stats" class="stats"></div>
+      <div class="tap-label">Tap anywhere here to count · swipe the card above to change</div>
+    </div>
+  </section>
+
+  <nav class="tabbar">
+    <button class="tab active" data-view="duas"><span class="tab-ar">دعاء</span><span>Duas</span></button>
+    <button class="tab" data-view="tasbeeh"><span class="tab-ar">تسبيح</span><span>Tasbeeh</span></button>
+  </nav>
+
+  <!-- list of all duas -->
+  <div id="index-sheet" class="sheet" hidden>
+    <div class="sheet-panel">
+      <div class="sheet-head"><span>All duas</span><button id="btn-close-index" class="icon-btn" aria-label="Close">✕</button></div>
+      <ol id="index-list"></ol>
+    </div>
+  </div>
+
+  <!-- iOS haptic tick (Safari 18+) -->
+  <label id="haptic" class="haptic" aria-hidden="true"><input type="checkbox" switch tabindex="-1"></label>
+</div>
+
+<script src="duas.js"></script>
+<script src="dhikr.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
