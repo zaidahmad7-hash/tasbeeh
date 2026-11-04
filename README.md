@@ -15,3 +15,5 @@ A small iPhone app (web app) with two screens:
 ## Adding duas later
 Open `duas.js` on GitHub → pencil icon → copy one `{ … },` block, paste at the end, edit the text → **Commit**.
 New dhikr go in `dhikr.js` the same way. On the phone, open the app twice to pick up the update.
+
+Live at https://zaidahmad7-hash.github.io/tasbeeh/
