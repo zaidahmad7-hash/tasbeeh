@@ -1,7 +1,7 @@
 // Offline support. Shows the saved copy instantly, then fetches the
 // latest version in the background — so new duas appear the second
 // time you open the app after updating GitHub.
-const CACHE = 'tasbeeh-v4';
+const CACHE = 'tasbeeh-v5';
 const SHELL = ['./', 'index.html', 'style.css', 'app.js', 'duas.js', 'dhikr.js',
   'manifest.webmanifest', 'icons/icon-180.png', 'icons/icon-512.png'];
 

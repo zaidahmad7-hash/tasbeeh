@@ -89,23 +89,76 @@
   });
   if (store.get('hintSeen', false)) $('#tap-hint').classList.add('gone');
 
-  // index sheet
+  // index sheet + search
   const sheet = $('#index-sheet');
-  $('#btn-index').addEventListener('click', () => {
-    let html = '', last = null;
-    DUAS.forEach((d, i) => {
-      if (d.group && d.group !== last) { html += `<li class="grp">${esc(d.group)}</li>`; last = d.group; }
-      html += `<li data-i="${i}" class="${i === duaIndex ? 'cur' : ''}"><span class="n">${i + 1}</span><span class="t">${esc(d.title)}</span><span class="g" style="color:var(--${d.tone || 'gold'})">${esc(d.tag)}</span></li>`;
-    });
+  const search = $('#search');
+  const norm = (t) => String(t || '').toLowerCase()
+    .normalize('NFD').replace(/[̀-ͯ]/g, '')          // latin accents
+    .replace(/[ً-ٰٟۖ-ۭ]/g, '')         // arabic harakat
+    .replace(/[أإآٱ]/g, 'ا').replace(/ى/g, 'ي').replace(/ة/g, 'ه')
+    .replace(/['’ʼ`‘ʿʾ]/g, '').replace(/[-–—]/g, ' ');
+  const INDEX = DUAS.map((d) => ({
+    strong: norm([d.title, d.group, d.tag].join(' ')),
+    weak: norm([d.when, d.translit, d.meaning, d.note, d.source, d.arabic, d.repeat].join(' '))
+  }));
+  const row = (d, i, sub) =>
+    `<li data-i="${i}" class="${i === duaIndex ? 'cur' : ''}"><span class="n">${i + 1}</span>` +
+    `<span class="t">${esc(d.title)}${sub ? `<small>${esc(d.group)}</small>` : ''}</span>` +
+    `<span class="g" style="color:var(--${d.tone || 'gold'})">${esc(d.tag)}</span></li>`;
+
+  function renderIndex() {
+    const q = norm(search.value).trim();
+    const terms = q.split(/\s+/).filter(Boolean).map((t) => t.replace(/s$/, '') || t); // "prophets" ~ "prophet"
+    $('#search-clear').hidden = !q;
+    let html = '';
+    if (!terms.length) {
+      let last = null;
+      DUAS.forEach((d, i) => {
+        if (d.group && d.group !== last) { html += `<li class="grp">${esc(d.group)}</li>`; last = d.group; }
+        html += row(d, i, false);
+      });
+      $('#search-count').textContent = '';
+    } else {
+      const hits = [];
+      DUAS.forEach((d, i) => {
+        let score = 0;
+        for (const t of terms) {
+          if (INDEX[i].strong.includes(t)) score += 3;
+          else if (INDEX[i].weak.includes(t)) score += 1;
+          else { score = -1; break; }
+        }
+        if (score > 0) hits.push({ i, score });
+      });
+      hits.sort((x, y) => y.score - x.score || x.i - y.i);
+      html = hits.map((h) => row(DUAS[h.i], h.i, true)).join('');
+      $('#search-count').textContent = hits.length
+        ? `${hits.length} dua${hits.length > 1 ? 's' : ''} found`
+        : 'No duas found — try another word';
+    }
     $('#index-list').innerHTML = html;
+  }
+
+  function openSheet(focusSearch) {
+    renderIndex();
     sheet.hidden = false;
-    const c = $('#index-list .cur'); if (c) c.scrollIntoView({ block: 'center' });
+    if (focusSearch) search.focus();
+    else { const c = $('#index-list .cur'); if (c) c.scrollIntoView({ block: 'center' }); }
+  }
+  function closeSheet() { sheet.hidden = true; search.blur(); }
+
+  $('#btn-index').addEventListener('click', () => openSheet(false));
+  $('#btn-search').addEventListener('click', () => openSheet(true));
+  search.addEventListener('input', () => { renderIndex(); $('#index-list').scrollTop = 0; });
+  search.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { const f = $('#index-list li[data-i]'); if (f) f.click(); }
+    if (e.key === 'Escape') closeSheet();
   });
-  $('#btn-close-index').addEventListener('click', () => (sheet.hidden = true));
+  $('#search-clear').addEventListener('click', () => { search.value = ''; renderIndex(); search.focus(); });
+  $('#btn-close-index').addEventListener('click', closeSheet);
   sheet.addEventListener('click', (e) => {
     const li = e.target.closest('li[data-i]');
-    if (li) { duaIndex = +li.dataset.i; renderDua(1); sheet.hidden = true; }
-    else if (e.target === sheet) sheet.hidden = true;
+    if (li) { duaIndex = +li.dataset.i; renderDua(1); closeSheet(); }
+    else if (e.target === sheet) closeSheet();
   });
 
   // =========================================================

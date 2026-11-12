@@ -23,9 +23,14 @@
   <!-- ───────── DUAS ───────── -->
   <section id="view-duas" class="view active">
     <header class="topbar">
-      <button id="btn-index" class="icon-btn" aria-label="All duas">
+      <div class="top-left">
+        <button id="btn-index" class="icon-btn" aria-label="All duas">
         <svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg>
       </button>
+        <button id="btn-search" class="icon-btn" aria-label="Search duas">
+          <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="10.5" cy="10.5" r="6" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M15 15l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+      </div>
       <div id="dua-group" class="top-title group-title">Duas</div>
       <div id="dua-pos" class="pos">1 / 1</div>
     </header>
@@ -76,6 +81,12 @@
   <div id="index-sheet" class="sheet" hidden>
     <div class="sheet-panel">
       <div class="sheet-head"><span>All duas</span><button id="btn-close-index" class="icon-btn" aria-label="Close">✕</button></div>
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" width="16" height="16"><circle cx="10.5" cy="10.5" r="6" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M15 15l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <input id="search" type="search" placeholder="Search — e.g. Ibrahim, anxiety, travel" autocomplete="off" autocorrect="off" spellcheck="false" enterkeyhint="search">
+        <button id="search-clear" class="clear" aria-label="Clear" hidden>✕</button>
+      </div>
+      <div id="search-count" class="search-count"></div>
       <ol id="index-list"></ol>
     </div>
   </div>
