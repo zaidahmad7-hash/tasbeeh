@@ -961,6 +961,19 @@ const DUAS = [
     source: "Qur'an 37:100"
   },
   {
+    id: "lut",
+    group: "Duas of the Prophets",
+    tag: "Family",
+    tone: "sand",
+    title: "Dua of Lut",
+    when: "When your family is surrounded by wrongdoing and you fear for them.",
+    arabic: "رَبِّ نَجِّنِي وَأَهْلِي مِمَّا يَعْمَلُونَ",
+    translit: "Rabbi najjini wa ahli mimma ya'malun",
+    meaning: "My Lord, rescue me and my family from what they are doing.",
+    note: "Lut (AS) said this about the people of his town; Allah saved him and his family.",
+    source: "Qur'an 26:169"
+  },
+  {
     id: "zakariya",
     group: "Duas of the Prophets",
     tag: "Children",
@@ -972,6 +985,19 @@ const DUAS = [
     meaning: "My Lord, grant me from Yourself good and pure offspring. You hear every prayer.",
     note: "Zakariya (AS) was old and his wife unable to have children; Allah gave them Yahya (AS).",
     source: "Qur'an 3:38"
+  },
+  {
+    id: "zakariya-alone",
+    group: "Duas of the Prophets",
+    tag: "Children",
+    tone: "sage",
+    title: "Dua of Zakariya — don't leave me alone",
+    when: "When what you are asking for seems impossible.",
+    arabic: "رَبِّ لَا تَذَرْنِي فَرْدًا وَأَنْتَ خَيْرُ الْوَارِثِينَ",
+    translit: "Rabbi la tadharni fardan wa anta khayrul-warithin",
+    meaning: "My Lord, do not leave me on my own, without an heir — and You are the best of inheritors.",
+    note: "Zakariya (AS) was old and his wife had never had children. Allah answered him with Yahya (AS) in the very next verse.",
+    source: "Qur'an 21:89–90"
   },
   {
     id: "musa-ease",
