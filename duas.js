@@ -6,6 +6,8 @@
 //
 //  tone: lavender | sky | sage | sand | blush | gold  (card accent)
 //  group: the section it appears under in the ☰ list.
+//  lines: optional [[arabic, transliteration, meaning], …] for line-by-line
+//         meaning (used instead of arabic/translit/meaning).
 //  repeat / note are optional — delete the line if not needed.
 // ─────────────────────────────────────────────────────────────
 const DUAS = [
@@ -109,6 +111,295 @@ const DUAS = [
     meaning: "Peace be upon you, O Prophet, and the mercy of Allah and His blessings.",
     note: "Part of the tashahhud the Prophet ﷺ taught Ibn Mas'ud (RA).",
     source: "Bukhari 831"
+  },
+  {
+    id: "salah-takbir",
+    group: "Understanding Salah",
+    tag: "Step 1 · Takbir",
+    tone: "gold",
+    title: "Takbir",
+    when: "To begin the prayer (hands raised), and at every movement after that.",
+    arabic: "اللَّهُ أَكْبَرُ",
+    translit: "Allahu Akbar",
+    meaning: "Allah is the Greatest.",
+    note: "Everything else is put aside — you are now standing before Allah.",
+    source: "Bukhari 757"
+  },
+  {
+    id: "salah-thana",
+    group: "Understanding Salah",
+    tag: "Step 2 · Thana",
+    tone: "sage",
+    title: "Thana — opening praise",
+    when: "Quietly, after the opening takbir, before Al-Fatiha.",
+    lines: [
+      ["سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ","Subhanaka Allahumma wa bihamdika","Glory be to You, O Allah, and all praise is Yours."],
+      ["وَتَبَارَكَ اسْمُكَ","wa tabarakasmuka","Blessed is Your name,"],
+      ["وَتَعَالَىٰ جَدُّكَ","wa ta'ala jadduka","exalted is Your majesty,"],
+      ["وَلَا إِلَٰهَ غَيْرُكَ","wa la ilaha ghairuk","and there is no god but You."]
+    ],
+    source: "Abu Dawud 775 · Tirmidhi 243"
+  },
+  {
+    id: "salah-taawwudh",
+    group: "Understanding Salah",
+    tag: "Step 3 · Ta'awwudh",
+    tone: "sand",
+    title: "Seeking refuge, then Bismillah",
+    when: "Quietly, before Al-Fatiha.",
+    lines: [
+      ["أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ","A'udhu billahi minash-shaytanir-rajim","I seek refuge in Allah from Satan, the rejected."],
+      ["بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ","Bismillahir-Rahmanir-Rahim","In the name of Allah, the Most Gracious, the Most Merciful."]
+    ],
+    source: "Qur'an 16:98 · Qur'an 1:1"
+  },
+  {
+    id: "salah-fatiha",
+    group: "Understanding Salah",
+    tag: "Step 4 · Al-Fatiha",
+    tone: "gold",
+    title: "Surah Al-Fatiha",
+    when: "In every rak'ah — the heart of the prayer.",
+    lines: [
+      ["الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ","Alhamdu lillahi Rabbil-'alamin","All praise is for Allah, Lord of all the worlds."],
+      ["الرَّحْمَٰنِ الرَّحِيمِ","Ar-Rahmanir-Rahim","The Most Gracious, the Most Merciful."],
+      ["مَالِكِ يَوْمِ الدِّينِ","Maliki yawmid-din","Master of the Day of Judgement."],
+      ["إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ","Iyyaka na'budu wa iyyaka nasta'in","You alone we worship, and You alone we ask for help."],
+      ["اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ","Ihdinas-siratal-mustaqim","Guide us to the straight path,"],
+      ["صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ","Siratal-ladhina an'amta 'alayhim","the path of those You have blessed,"],
+      ["غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ","Ghayril-maghdubi 'alayhim wa lad-dallin","not of those who earned Your anger, nor of those who went astray."],
+      ["آمِين","Ameen","O Allah, accept."]
+    ],
+    note: "The Prophet ﷺ said there is no prayer without Al-Fatiha. Allah answers each line: when you say “Guide us…”, He says “This is for My servant, and My servant will have what he asked” (Muslim 395).",
+    source: "Qur'an 1 · Bukhari 756 · Muslim 395"
+  },
+  {
+    id: "salah-ikhlas",
+    group: "Understanding Salah",
+    tag: "Step 5 · Short surah",
+    tone: "sky",
+    title: "Surah Al-Ikhlas",
+    when: "After Al-Fatiha in the first two rak'ahs (any surah can be recited).",
+    lines: [
+      ["قُلْ هُوَ اللَّهُ أَحَدٌ","Qul huwallahu ahad","Say, He is Allah, the One."],
+      ["اللَّهُ الصَّمَدُ","Allahus-samad","Allah, the Self-Sufficient, on whom all depend."],
+      ["لَمْ يَلِدْ وَلَمْ يُولَدْ","Lam yalid wa lam yulad","He does not give birth, nor was He born."],
+      ["وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ","Wa lam yakun lahu kufuwan ahad","And there is none comparable to Him."]
+    ],
+    note: "The Prophet ﷺ said it is equal to a third of the Qur'an.",
+    source: "Qur'an 112 · Bukhari 5013"
+  },
+  {
+    id: "salah-kawthar",
+    group: "Understanding Salah",
+    tag: "Step 5 · Short surah",
+    tone: "sky",
+    title: "Surah Al-Kawthar",
+    when: "After Al-Fatiha — the shortest surah of the Qur'an.",
+    lines: [
+      ["إِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ","Inna a'taynakal-kawthar","We have given you abundance (Al-Kawthar)."],
+      ["فَصَلِّ لِرَبِّكَ وَانْحَرْ","Fasalli li rabbika wanhar","So pray to your Lord and sacrifice."],
+      ["إِنَّ شَانِئَكَ هُوَ الْأَبْتَرُ","Inna shani'aka huwal-abtar","Truly, your enemy is the one cut off."]
+    ],
+    source: "Qur'an 108"
+  },
+  {
+    id: "salah-asr",
+    group: "Understanding Salah",
+    tag: "Step 5 · Short surah",
+    tone: "sky",
+    title: "Surah Al-Asr",
+    when: "After Al-Fatiha.",
+    lines: [
+      ["وَالْعَصْرِ","Wal-'asr","By time,"],
+      ["إِنَّ الْإِنْسَانَ لَفِي خُسْرٍ","Innal-insana lafi khusr","mankind is surely in loss,"],
+      ["إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ","Illal-ladhina amanu wa 'amilus-salihat","except those who believe and do good deeds,"],
+      ["وَتَوَاصَوْا بِالْحَقِّ وَتَوَاصَوْا بِالصَّبْرِ","wa tawasaw bil-haqqi wa tawasaw bis-sabr","and urge one another to truth and to patience."]
+    ],
+    source: "Qur'an 103"
+  },
+  {
+    id: "salah-falaq",
+    group: "Understanding Salah",
+    tag: "Step 5 · Short surah",
+    tone: "sky",
+    title: "Surah Al-Falaq",
+    when: "After Al-Fatiha.",
+    lines: [
+      ["قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ","Qul a'udhu bi rabbil-falaq","Say, I seek refuge in the Lord of the daybreak,"],
+      ["مِنْ شَرِّ مَا خَلَقَ","Min sharri ma khalaq","from the evil of what He created,"],
+      ["وَمِنْ شَرِّ غَاسِقٍ إِذَا وَقَبَ","Wa min sharri ghasiqin idha waqab","from the evil of the darkness when it settles,"],
+      ["وَمِنْ شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ","Wa min sharrin-naffathati fil-'uqad","from the evil of those who blow on knots,"],
+      ["وَمِنْ شَرِّ حَاسِدٍ إِذَا حَسَدَ","Wa min sharri hasidin idha hasad","and from the evil of the envier when he envies."]
+    ],
+    source: "Qur'an 113"
+  },
+  {
+    id: "salah-nas",
+    group: "Understanding Salah",
+    tag: "Step 5 · Short surah",
+    tone: "sky",
+    title: "Surah An-Nas",
+    when: "After Al-Fatiha.",
+    lines: [
+      ["قُلْ أَعُوذُ بِرَبِّ النَّاسِ","Qul a'udhu bi rabbin-nas","Say, I seek refuge in the Lord of mankind,"],
+      ["مَلِكِ النَّاسِ","Malikin-nas","the King of mankind,"],
+      ["إِلَٰهِ النَّاسِ","Ilahin-nas","the God of mankind,"],
+      ["مِنْ شَرِّ الْوَسْوَاسِ الْخَنَّاسِ","Min sharril-waswasil-khannas","from the evil of the sneaking whisperer,"],
+      ["الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ","Alladhi yuwaswisu fi sudurin-nas","who whispers into the hearts of people,"],
+      ["مِنَ الْجِنَّةِ وَالنَّاسِ","Minal-jinnati wan-nas","from among jinn and mankind."]
+    ],
+    source: "Qur'an 114"
+  },
+  {
+    id: "salah-ruku",
+    group: "Understanding Salah",
+    tag: "Step 6 · Ruku",
+    tone: "sage",
+    title: "In ruku (bowing)",
+    when: "While bowing, back straight, hands on knees.",
+    arabic: "سُبْحَانَ رَبِّيَ الْعَظِيمِ",
+    translit: "Subhana Rabbiyal-'Azim",
+    meaning: "Glory be to my Lord, the Magnificent.",
+    repeat: "3 times",
+    source: "Muslim 772"
+  },
+  {
+    id: "salah-qawmah",
+    group: "Understanding Salah",
+    tag: "Step 7 · Rising",
+    tone: "sage",
+    title: "Rising from ruku",
+    when: "The first while rising, the second once standing straight.",
+    lines: [
+      ["سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ","Sami'Allahu liman hamidah","Allah hears whoever praises Him."],
+      ["رَبَّنَا لَكَ الْحَمْدُ","Rabbana lakal-hamd","Our Lord, all praise belongs to You."]
+    ],
+    source: "Bukhari 789"
+  },
+  {
+    id: "salah-sujud",
+    group: "Understanding Salah",
+    tag: "Step 8 · Sujud",
+    tone: "lavender",
+    title: "In sujud (prostration)",
+    when: "Forehead on the ground — the closest you are to Allah.",
+    arabic: "سُبْحَانَ رَبِّيَ الْأَعْلَىٰ",
+    translit: "Subhana Rabbiyal-A'la",
+    meaning: "Glory be to my Lord, the Most High.",
+    repeat: "3 times",
+    note: "The Prophet ﷺ said a servant is closest to his Lord while in sujud, so make plenty of dua there (Muslim 482).",
+    source: "Muslim 772 · Muslim 482"
+  },
+  {
+    id: "salah-jalsa",
+    group: "Understanding Salah",
+    tag: "Step 8 · Between sujud",
+    tone: "lavender",
+    title: "Sitting between the two sujud",
+    when: "In the short sitting between the two prostrations.",
+    arabic: "رَبِّ اغْفِرْ لِي",
+    translit: "Rabbighfir li",
+    meaning: "My Lord, forgive me.",
+    source: "Ibn Majah 897"
+  },
+  {
+    id: "salah-tashahhud",
+    group: "Understanding Salah",
+    tag: "Step 9 · Tashahhud",
+    tone: "gold",
+    title: "Tashahhud (At-Tahiyyat)",
+    when: "In every sitting — after the second rak'ah and in the final sitting.",
+    lines: [
+      ["التَّحِيَّاتُ لِلَّهِ وَالصَّلَوَاتُ وَالطَّيِّبَاتُ","At-tahiyyatu lillahi was-salawatu wat-tayyibat","All greetings, prayers and pure words belong to Allah."],
+      ["السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ","As-salamu 'alayka ayyuhan-Nabiyyu wa rahmatullahi wa barakatuh","Peace be upon you, O Prophet, and the mercy and blessings of Allah."],
+      ["السَّلَامُ عَلَيْنَا وَعَلَىٰ عِبَادِ اللَّهِ الصَّالِحِينَ","As-salamu 'alayna wa 'ala 'ibadillahis-salihin","Peace be upon us and upon Allah's righteous servants."],
+      ["أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ","Ashhadu an la ilaha illallah","I bear witness that there is no god but Allah,"],
+      ["وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ","wa ashhadu anna Muhammadan 'abduhu wa rasuluh","and I bear witness that Muhammad is His servant and Messenger."]
+    ],
+    note: "The Prophet ﷺ taught this to Ibn Mas'ud (RA) as carefully as he taught him a surah of the Qur'an.",
+    source: "Bukhari 831 · Bukhari 6265"
+  },
+  {
+    id: "salah-durood",
+    group: "Understanding Salah",
+    tag: "Step 10 · Durood",
+    tone: "gold",
+    title: "Durood Ibrahimi",
+    when: "In the final sitting, after the tashahhud.",
+    lines: [
+      ["اللَّهُمَّ صَلِّ عَلَىٰ مُحَمَّدٍ وَعَلَىٰ آلِ مُحَمَّدٍ","Allahumma salli 'ala Muhammadin wa 'ala ali Muhammad","O Allah, send prayers on Muhammad and his family,"],
+      ["كَمَا صَلَّيْتَ عَلَىٰ إِبْرَاهِيمَ وَعَلَىٰ آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ","kama sallayta 'ala Ibrahima wa 'ala ali Ibrahim, innaka Hamidun Majid","as You sent prayers on Ibrahim and his family. Truly, You are Praiseworthy and Glorious."],
+      ["اللَّهُمَّ بَارِكْ عَلَىٰ مُحَمَّدٍ وَعَلَىٰ آلِ مُحَمَّدٍ","Allahumma barik 'ala Muhammadin wa 'ala ali Muhammad","O Allah, bless Muhammad and his family,"],
+      ["كَمَا بَارَكْتَ عَلَىٰ إِبْرَاهِيمَ وَعَلَىٰ آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ","kama barakta 'ala Ibrahima wa 'ala ali Ibrahim, innaka Hamidun Majid","as You blessed Ibrahim and his family. Truly, You are Praiseworthy and Glorious."]
+    ],
+    source: "Bukhari 3370"
+  },
+  {
+    id: "salah-before-salam",
+    group: "Understanding Salah",
+    tag: "Step 11 · Dua",
+    tone: "blush",
+    title: "Dua before salam",
+    when: "After the durood, before ending the prayer — common choices.",
+    lines: [
+      ["رَبِّ اجْعَلْنِي مُقِيمَ الصَّلَاةِ وَمِنْ ذُرِّيَّتِي رَبَّنَا وَتَقَبَّلْ دُعَاءِ","Rabbij'alni muqimas-salati wa min dhurriyyati, Rabbana wa taqabbal du'a","My Lord, make me and my descendants steadfast in prayer. Our Lord, accept my prayer."],
+      ["رَبَّنَا اغْفِرْ لِي وَلِوَالِدَيَّ وَلِلْمُؤْمِنِينَ يَوْمَ يَقُومُ الْحِسَابُ","Rabbanagh-firli wa liwalidayya wa lil-mu'minina yawma yaqumul-hisab","Our Lord, forgive me, my parents and the believers on the Day the account is taken."],
+      ["رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ","Rabbana atina fid-dunya hasanah, wa fil-akhirati hasanah, wa qina 'adhaban-nar","Our Lord, give us good in this world and good in the Hereafter, and protect us from the punishment of the Fire."]
+    ],
+    source: "Qur'an 14:40–41 · Qur'an 2:201"
+  },
+  {
+    id: "salah-taslim",
+    group: "Understanding Salah",
+    tag: "Step 12 · Taslim",
+    tone: "sage",
+    title: "Taslim — ending the prayer",
+    when: "Turning the head to the right, then to the left.",
+    arabic: "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ",
+    translit: "As-salamu 'alaykum wa rahmatullah",
+    meaning: "Peace and the mercy of Allah be upon you.",
+    note: "Said to the angels and to those praying beside you.",
+    source: "Muslim 582 · Abu Dawud 996"
+  },
+  {
+    id: "salah-qunut",
+    group: "Understanding Salah",
+    tag: "Witr · Qunut",
+    tone: "lavender",
+    title: "Dua Qunut",
+    when: "In the third rak'ah of Witr, before ruku.",
+    lines: [
+      ["اللَّهُمَّ إِنَّا نَسْتَعِينُكَ وَنَسْتَغْفِرُكَ","Allahumma inna nasta'inuka wa nastaghfiruka","O Allah, we ask You for help and forgiveness."],
+      ["وَنُؤْمِنُ بِكَ وَنَتَوَكَّلُ عَلَيْكَ","wa nu'minu bika wa natawakkalu 'alayk","We believe in You and rely on You."],
+      ["وَنُثْنِي عَلَيْكَ الْخَيْرَ وَنَشْكُرُكَ وَلَا نَكْفُرُكَ","wa nuthni 'alaykal-khayr, wa nashkuruka wa la nakfuruk","We praise You in the best way, we thank You and are not ungrateful,"],
+      ["وَنَخْلَعُ وَنَتْرُكُ مَنْ يَفْجُرُكَ","wa nakhla'u wa natruku man yafjuruk","and we turn away from and leave anyone who disobeys You."],
+      ["اللَّهُمَّ إِيَّاكَ نَعْبُدُ وَلَكَ نُصَلِّي وَنَسْجُدُ","Allahumma iyyaka na'budu wa laka nusalli wa nasjud","O Allah, You alone we worship. To You we pray and prostrate,"],
+      ["وَإِلَيْكَ نَسْعَىٰ وَنَحْفِدُ","wa ilayka nas'a wa nahfid","and towards You we strive and hurry."],
+      ["وَنَرْجُو رَحْمَتَكَ وَنَخْشَىٰ عَذَابَكَ","wa narju rahmataka wa nakhsha 'adhabak","We hope for Your mercy and fear Your punishment."],
+      ["إِنَّ عَذَابَكَ بِالْكُفَّارِ مُلْحِقٌ","inna 'adhabaka bil-kuffari mulhiq","Your punishment will surely reach the disbelievers."]
+    ],
+    note: "This wording is reported from Umar (RA) and is the one most recited in India and Pakistan. The next page has the Qunut the Prophet ﷺ taught Al-Hasan (RA).",
+    source: "Ibn Abi Shaybah · Al-Bayhaqi"
+  },
+  {
+    id: "salah-qunut-hasan",
+    group: "Understanding Salah",
+    tag: "Witr · Qunut",
+    tone: "lavender",
+    title: "Qunut taught to Al-Hasan",
+    when: "In Witr — the other well-known Qunut.",
+    lines: [
+      ["اللَّهُمَّ اهْدِنِي فِيمَنْ هَدَيْتَ","Allahummahdini fiman hadayt","O Allah, guide me among those You have guided,"],
+      ["وَعَافِنِي فِيمَنْ عَافَيْتَ","wa 'afini fiman 'afayt","keep me well among those You have kept well,"],
+      ["وَتَوَلَّنِي فِيمَنْ تَوَلَّيْتَ","wa tawallani fiman tawallayt","take care of me among those You take care of,"],
+      ["وَبَارِكْ لِي فِيمَا أَعْطَيْتَ","wa barik li fima a'tayt","bless me in what You have given,"],
+      ["وَقِنِي شَرَّ مَا قَضَيْتَ","wa qini sharra ma qadayt","and protect me from the evil of what You have decreed."],
+      ["فَإِنَّكَ تَقْضِي وَلَا يُقْضَىٰ عَلَيْكَ","fa innaka taqdi wa la yuqda 'alayk","For You decree, and none decrees over You."],
+      ["وَإِنَّهُ لَا يَذِلُّ مَنْ وَالَيْتَ","wa innahu la yadhillu man walayt","Whoever You befriend is never humbled."],
+      ["تَبَارَكْتَ رَبَّنَا وَتَعَالَيْتَ","tabarakta rabbana wa ta'alayt","Blessed and exalted are You, our Lord."]
+    ],
+    source: "Abu Dawud 1425 · Tirmidhi 464"
   },
   {
     id: "yunus",

@@ -43,9 +43,13 @@
       `<div class="tag">${esc(d.tag)}</div>` +
       `<h1 class="title">${esc(d.title)}</h1>` +
       (d.when ? `<p class="when">${esc(d.when)}</p>` : '') +
-      `<p class="arabic ${d.arabic.length > 140 ? 'long' : ''}" dir="rtl" lang="ar">${esc(d.arabic)}</p>` +
-      `<p class="translit">${esc(d.translit)}</p>` +
-      `<p class="meaning">${esc(d.meaning)}</p>` +
+      (d.lines
+        ? `<div class="lines">` + d.lines.map((l) =>
+            `<div class="line"><p class="l-ar" dir="rtl" lang="ar">${esc(l[0])}</p>` +
+            `<p class="l-tr">${esc(l[1])}</p><p class="l-mn">${esc(l[2])}</p></div>`).join('') + `</div>`
+        : `<p class="arabic ${d.arabic.length > 140 ? 'long' : ''}" dir="rtl" lang="ar">${esc(d.arabic)}</p>` +
+          `<p class="translit">${esc(d.translit)}</p>` +
+          `<p class="meaning">${esc(d.meaning)}</p>`) +
       (d.repeat ? `<div class="repeat">Recite ${esc(d.repeat)}</div>` : '') +
       (d.note ? `<p class="note">${esc(d.note)}</p>` : '') +
       (d.source ? `<p class="source">${esc(d.source)}</p>` : '');
@@ -99,7 +103,7 @@
     .replace(/['’ʼ`‘ʿʾ]/g, '').replace(/[-–—]/g, ' ');
   const INDEX = DUAS.map((d) => ({
     strong: norm([d.title, d.group, d.tag].join(' ')),
-    weak: norm([d.when, d.translit, d.meaning, d.note, d.source, d.arabic, d.repeat].join(' '))
+    weak: norm([d.when, d.translit, d.meaning, d.note, d.source, d.arabic, d.repeat, ...(d.lines || []).flat()].join(' '))
   }));
   const row = (d, i, sub) =>
     `<li data-i="${i}" class="${i === duaIndex ? 'cur' : ''}"><span class="n">${i + 1}</span>` +
