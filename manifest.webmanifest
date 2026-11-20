@@ -1,6 +1,6 @@
 {
-  "name": "Tasbeeh — Duas & Dhikr",
-  "short_name": "Tasbeeh",
+  "name": "MyDuas — Duas, Durood & Tasbeeh",
+  "short_name": "MyDuas",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
@@ -8,7 +8,17 @@
   "background_color": "#0b0b0c",
   "theme_color": "#0b0b0c",
   "icons": [
-    { "src": "icons/icon-180.png", "sizes": "180x180", "type": "image/png" },
-    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
-  ]
+    {
+      "src": "icons/icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "id": "./"
 }

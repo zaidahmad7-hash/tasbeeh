@@ -1,4 +1,4 @@
-# Tasbeeh — Duas & Dhikr
+# MyDuas — Duas, Durood & Tasbeeh
 
 A small iPhone app (web app) with two screens:
 
