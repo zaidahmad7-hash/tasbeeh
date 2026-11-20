@@ -1,9 +1,11 @@
+@font-face{font-family:IndoPak;src:url(fonts/indopak.woff2) format("woff2");font-display:swap}
+@font-face{font-family:AmiriLocal;src:url(fonts/amiri-arabic-400-normal.woff2) format("woff2");font-display:swap}
 :root{
   --bg:#0b0b0c; --card:#131315; --line:#232327;
   --gold:#c9a961; --gold-soft:#e7d6a8;
   --text:#ece8e1; --muted:#8e8a83; --faint:#55524d;
   --lavender:#b9b2d6; --sky:#a9c4d8; --sage:#a8c3b1; --sand:#d9c7a3; --blush:#e3b7b0;
-  --ar:"Amiri","Geeza Pro","Noto Naskh Arabic",serif;
+  --ar:IndoPak,AmiriLocal,"Amiri","Geeza Pro",serif;
   --serif:"Cormorant Garamond",Georgia,serif;
   --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",sans-serif;
   --st:env(safe-area-inset-top,0px); --sb:env(safe-area-inset-bottom,0px);

@@ -1,9 +1,10 @@
 // Offline support.
 // App files: always try the network first (so updates show straight away),
 // fall back to the saved copy when offline. Fonts: saved copy first.
-const CACHE = 'myduas-v7';
+const CACHE = 'myduas-v8';
 const SHELL = ['./', 'index.html', 'style.css', 'app.js', 'duas.js', 'dhikr.js',
-  'manifest.webmanifest', 'icons/icon-180.png', 'icons/icon-512.png'];
+  'manifest.webmanifest', 'icons/icon-180.png', 'icons/icon-512.png',
+  'fonts/indopak.woff2', 'fonts/amiri-arabic-400-normal.woff2'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE)
