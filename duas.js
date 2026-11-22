@@ -748,6 +748,131 @@ const DUAS = [
     source: "Bukhari 6324"
   },
   {
+    id: "zakariya",
+    group: "Children",
+    tag: "Pious offspring",
+    tone: "sage",
+    title: "Dua of Zakariya",
+    when: "When you long for pious offspring, however unlikely it seems.",
+    arabic: "رَبِّ هَبْ لِي مِنْ لَدُنْكَ ذُرِّيَّةً طَيِّبَةً إِنَّكَ سَمِيعُ الدُّعَاءِ",
+    translit: "Rabbi hab li min ladunka dhurriyyatan tayyibah, innaka sami'ud-du'a",
+    meaning: "My Lord, grant me from Yourself good and pure offspring. You hear every prayer.",
+    note: "Zakariya (AS) was old and his wife unable to have children; Allah gave them Yahya (AS).",
+    source: "Qur'an 3:38"
+  },
+  {
+    id: "zakariya-alone",
+    group: "Children",
+    tag: "Longing for a child",
+    tone: "sage",
+    title: "Dua of Zakariya — don't leave me alone",
+    when: "When what you are asking for seems impossible.",
+    arabic: "رَبِّ لَا تَذَرْنِي فَرْدًا وَأَنْتَ خَيْرُ الْوَارِثِينَ",
+    translit: "Rabbi la tadharni fardan wa anta khayrul-warithin",
+    meaning: "My Lord, do not leave me on my own, without an heir — and You are the best of inheritors.",
+    note: "Zakariya (AS) was old and his wife had never had children. Allah answered him with Yahya (AS) in the very next verse.",
+    source: "Qur'an 21:89–90"
+  },
+  {
+    id: "ibrahim-children",
+    group: "Children",
+    tag: "Righteous children",
+    tone: "sage",
+    title: "Dua of Ibrahim for righteous children",
+    when: "When asking Allah for good children.",
+    arabic: "رَبِّ هَبْ لِي مِنَ الصَّالِحِينَ",
+    translit: "Rabbi hab li minas-salihin",
+    meaning: "My Lord, grant me a child from among the righteous.",
+    note: "Allah answered with Ismail (AS).",
+    source: "Qur'an 37:100"
+  },
+  {
+    id: "child-aslih",
+    group: "Children",
+    tag: "Their goodness",
+    tone: "sage",
+    title: "Make my children righteous",
+    when: "For your children's goodness — and gratitude for your parents.",
+    arabic: "رَبِّ أَوْزِعْنِي أَنْ أَشْكُرَ نِعْمَتَكَ الَّتِي أَنْعَمْتَ عَلَيَّ وَعَلَىٰ وَالِدَيَّ وَأَنْ أَعْمَلَ صَالِحًا تَرْضَاهُ وَأَصْلِحْ لِي فِي ذُرِّيَّتِي إِنِّي تُبْتُ إِلَيْكَ وَإِنِّي مِنَ الْمُسْلِمِينَ",
+    translit: "Rabbi awzi'ni an ashkura ni'matakal-lati an'amta 'alayya wa 'ala walidayya wa an a'mala salihan tardahu wa aslih li fi dhurriyyati, inni tubtu ilayka wa inni minal-muslimin",
+    meaning: "My Lord, inspire me to be grateful for the blessings You gave me and my parents, and to do good that pleases You. And make my children righteous for me. I turn to You in repentance, and I am among those who submit to You.",
+    note: "The Qur'an gives this as the dua of a person who reaches forty, remembering what their parents went through for them.",
+    source: "Qur'an 46:15"
+  },
+  {
+    id: "ibrahim-salah",
+    group: "Children",
+    tag: "Their salah",
+    tone: "gold",
+    title: "Dua of Ibrahim for prayer",
+    when: "For steadiness in your prayers, and your children's.",
+    arabic: "رَبِّ اجْعَلْنِي مُقِيمَ الصَّلَاةِ وَمِنْ ذُرِّيَّتِي رَبَّنَا وَتَقَبَّلْ دُعَاءِ",
+    translit: "Rabbij'alni muqimas-salati wa min dhurriyyati, rabbana wa taqabbal du'a",
+    meaning: "My Lord, make me one who establishes prayer, and my children too. Our Lord, accept my dua.",
+    source: "Qur'an 14:40"
+  },
+  {
+    id: "family",
+    group: "Children",
+    tag: "Comfort of the eyes",
+    tone: "blush",
+    title: "For your spouse and children",
+    when: "For your family's happiness and faith.",
+    arabic: "رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا",
+    translit: "Rabbana hab lana min azwajina wa dhurriyyatina qurrata a'yun, waj'alna lil-muttaqina imama",
+    meaning: "Our Lord, give us joy in our spouses and children, and make us an example for those who are mindful of You.",
+    source: "Qur'an 25:74"
+  },
+  {
+    id: "child-protection",
+    group: "Children",
+    tag: "Protection",
+    tone: "sand",
+    title: "Protection for your children",
+    when: "Over your children — at bedtime, when they go out, or whenever you worry for them.",
+    arabic: "أُعِيذُكُمَا بِكَلِمَاتِ اللَّهِ التَّامَّةِ مِنْ كُلِّ شَيْطَانٍ وَهَامَّةٍ، وَمِنْ كُلِّ عَيْنٍ لَامَّةٍ",
+    translit: "U'idhukuma bikalimatillahit-tammah, min kulli shaytanin wa hammah, wa min kulli 'aynin lammah",
+    meaning: "I place you both under the protection of Allah's perfect words, from every devil and every harmful creature, and from every evil eye.",
+    note: "The Prophet ﷺ said this over Al-Hasan and Al-Husayn, and said Ibrahim (AS) said it over Ismail and Ishaq. This wording is for two children — for one boy say U'idhuka, for one girl U'idhuki, for three or more U'idhukum.",
+    source: "Bukhari 3371"
+  },
+  {
+    id: "parents",
+    group: "Parents",
+    tag: "Mercy",
+    tone: "blush",
+    title: "For your parents",
+    when: "Whenever you think of your mum and dad.",
+    arabic: "رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا",
+    translit: "Rabbir-hamhuma kama rabbayani saghira",
+    meaning: "My Lord, have mercy on them as they raised me when I was small.",
+    source: "Qur'an 17:24"
+  },
+  {
+    id: "ibrahim-parents",
+    group: "Parents",
+    tag: "Forgiveness",
+    tone: "blush",
+    title: "Dua of Ibrahim for forgiveness",
+    when: "For yourself, your parents and all believers.",
+    arabic: "رَبَّنَا اغْفِرْ لِي وَلِوَالِدَيَّ وَلِلْمُؤْمِنِينَ يَوْمَ يَقُومُ الْحِسَابُ",
+    translit: "Rabbanaghfir li wa liwalidayya wa lil-mu'minina yawma yaqumul-hisab",
+    meaning: "Our Lord, forgive me, my parents and the believers on the Day the account is taken.",
+    source: "Qur'an 14:41"
+  },
+  {
+    id: "nuh-parents",
+    group: "Parents",
+    tag: "Home & believers",
+    tone: "blush",
+    title: "Dua of Nuh for his parents",
+    when: "For your parents, your household and all believers.",
+    arabic: "رَبِّ اغْفِرْ لِي وَلِوَالِدَيَّ وَلِمَنْ دَخَلَ بَيْتِيَ مُؤْمِنًا وَلِلْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ",
+    translit: "Rabbighfir li wa liwalidayya wa liman dakhala baytiya mu'minan wa lil-mu'minina wal-mu'minat",
+    meaning: "My Lord, forgive me and my parents, whoever enters my home as a believer, and all believing men and women.",
+    source: "Qur'an 71:28"
+  },
+  {
     id: "istighfar",
     group: "Forgiveness & gratitude",
     tag: "Forgiveness",
@@ -825,30 +950,6 @@ const DUAS = [
     source: "Qur'an 20:114"
   },
   {
-    id: "parents",
-    group: "Qur'an & Names of Allah",
-    tag: "Parents",
-    tone: "blush",
-    title: "For your parents",
-    when: "Whenever you think of your mum and dad.",
-    arabic: "رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا",
-    translit: "Rabbir-hamhuma kama rabbayani saghira",
-    meaning: "My Lord, have mercy on them as they raised me when I was small.",
-    source: "Qur'an 17:24"
-  },
-  {
-    id: "family",
-    group: "Qur'an & Names of Allah",
-    tag: "Family",
-    tone: "blush",
-    title: "For your spouse and children",
-    when: "For your family's happiness and faith.",
-    arabic: "رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا",
-    translit: "Rabbana hab lana min azwajina wa dhurriyyatina qurrata a'yun, waj'alna lil-muttaqina imama",
-    meaning: "Our Lord, give us joy in our spouses and children, and make us an example for those who are mindful of You.",
-    source: "Qur'an 25:74"
-  },
-  {
     id: "kahf-youths",
     group: "Qur'an & Names of Allah",
     tag: "Guidance",
@@ -899,42 +1000,6 @@ const DUAS = [
     source: "Qur'an 7:23"
   },
   {
-    id: "nuh-parents",
-    group: "Duas of the Prophets",
-    tag: "Parents",
-    tone: "blush",
-    title: "Dua of Nuh for his parents",
-    when: "For your parents, your household and all believers.",
-    arabic: "رَبِّ اغْفِرْ لِي وَلِوَالِدَيَّ وَلِمَنْ دَخَلَ بَيْتِيَ مُؤْمِنًا وَلِلْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ",
-    translit: "Rabbighfir li wa liwalidayya wa liman dakhala baytiya mu'minan wa lil-mu'minina wal-mu'minat",
-    meaning: "My Lord, forgive me and my parents, whoever enters my home as a believer, and all believing men and women.",
-    source: "Qur'an 71:28"
-  },
-  {
-    id: "ibrahim-salah",
-    group: "Duas of the Prophets",
-    tag: "Salah",
-    tone: "gold",
-    title: "Dua of Ibrahim for prayer",
-    when: "For steadiness in your prayers, and your children's.",
-    arabic: "رَبِّ اجْعَلْنِي مُقِيمَ الصَّلَاةِ وَمِنْ ذُرِّيَّتِي رَبَّنَا وَتَقَبَّلْ دُعَاءِ",
-    translit: "Rabbij'alni muqimas-salati wa min dhurriyyati, rabbana wa taqabbal du'a",
-    meaning: "My Lord, make me one who establishes prayer, and my children too. Our Lord, accept my dua.",
-    source: "Qur'an 14:40"
-  },
-  {
-    id: "ibrahim-parents",
-    group: "Duas of the Prophets",
-    tag: "Parents",
-    tone: "blush",
-    title: "Dua of Ibrahim for forgiveness",
-    when: "For yourself, your parents and all believers.",
-    arabic: "رَبَّنَا اغْفِرْ لِي وَلِوَالِدَيَّ وَلِلْمُؤْمِنِينَ يَوْمَ يَقُومُ الْحِسَابُ",
-    translit: "Rabbanaghfir li wa liwalidayya wa lil-mu'minina yawma yaqumul-hisab",
-    meaning: "Our Lord, forgive me, my parents and the believers on the Day the account is taken.",
-    source: "Qur'an 14:41"
-  },
-  {
     id: "ibrahim-accept",
     group: "Duas of the Prophets",
     tag: "Acceptance",
@@ -948,19 +1013,6 @@ const DUAS = [
     source: "Qur'an 2:127"
   },
   {
-    id: "ibrahim-children",
-    group: "Duas of the Prophets",
-    tag: "Children",
-    tone: "sage",
-    title: "Dua of Ibrahim for righteous children",
-    when: "When asking Allah for good children.",
-    arabic: "رَبِّ هَبْ لِي مِنَ الصَّالِحِينَ",
-    translit: "Rabbi hab li minas-salihin",
-    meaning: "My Lord, grant me a child from among the righteous.",
-    note: "Allah answered with Ismail (AS).",
-    source: "Qur'an 37:100"
-  },
-  {
     id: "lut",
     group: "Duas of the Prophets",
     tag: "Family",
@@ -972,32 +1024,6 @@ const DUAS = [
     meaning: "My Lord, rescue me and my family from what they are doing.",
     note: "Lut (AS) said this about the people of his town; Allah saved him and his family.",
     source: "Qur'an 26:169"
-  },
-  {
-    id: "zakariya",
-    group: "Duas of the Prophets",
-    tag: "Children",
-    tone: "sage",
-    title: "Dua of Zakariya",
-    when: "When you long for pious offspring, however unlikely it seems.",
-    arabic: "رَبِّ هَبْ لِي مِنْ لَدُنْكَ ذُرِّيَّةً طَيِّبَةً إِنَّكَ سَمِيعُ الدُّعَاءِ",
-    translit: "Rabbi hab li min ladunka dhurriyyatan tayyibah, innaka sami'ud-du'a",
-    meaning: "My Lord, grant me from Yourself good and pure offspring. You hear every prayer.",
-    note: "Zakariya (AS) was old and his wife unable to have children; Allah gave them Yahya (AS).",
-    source: "Qur'an 3:38"
-  },
-  {
-    id: "zakariya-alone",
-    group: "Duas of the Prophets",
-    tag: "Children",
-    tone: "sage",
-    title: "Dua of Zakariya — don't leave me alone",
-    when: "When what you are asking for seems impossible.",
-    arabic: "رَبِّ لَا تَذَرْنِي فَرْدًا وَأَنْتَ خَيْرُ الْوَارِثِينَ",
-    translit: "Rabbi la tadharni fardan wa anta khayrul-warithin",
-    meaning: "My Lord, do not leave me on my own, without an heir — and You are the best of inheritors.",
-    note: "Zakariya (AS) was old and his wife had never had children. Allah answered him with Yahya (AS) in the very next verse.",
-    source: "Qur'an 21:89–90"
   },
   {
     id: "musa-ease",
