@@ -1096,6 +1096,32 @@ const DUAS = [
     source: "Qur'an 71:28"
   },
   {
+    id: "parents-aslih",
+    group: "Parents",
+    tag: "Thanks for them",
+    tone: "sage",
+    title: "Thanking Allah for your parents",
+    when: "When you remember everything your parents did for you.",
+    arabic: "رَبِّ أَوْزِعْنِي أَنْ أَشْكُرَ نِعْمَتَكَ الَّتِي أَنْعَمْتَ عَلَيَّ وَعَلَىٰ وَالِدَيَّ وَأَنْ أَعْمَلَ صَالِحًا تَرْضَاهُ وَأَصْلِحْ لِي فِي ذُرِّيَّتِي إِنِّي تُبْتُ إِلَيْكَ وَإِنِّي مِنَ الْمُسْلِمِينَ",
+    translit: "Rabbi awzi'ni an ashkura ni'matakal-lati an'amta 'alayya wa 'ala walidayya wa an a'mala salihan tardahu wa aslih li fi dhurriyyati, inni tubtu ilayka wa inni minal-muslimin",
+    meaning: "My Lord, inspire me to be grateful for the blessings You gave me and my parents, and to do good that pleases You. And make my children righteous for me. I turn to You in repentance, and I am among those who submit to You.",
+    note: "The verse before it reminds us that our mothers carried us with hardship and gave birth to us with hardship. The Qur'an gives this as the dua of a person who reaches forty. (Also in the Children section.)",
+    source: "Qur'an 46:15"
+  },
+  {
+    id: "parents-deceased",
+    group: "Parents",
+    tag: "After they pass away",
+    tone: "lavender",
+    title: "For a parent who has passed away",
+    when: "For your father or mother after they have died — in your prayers, or any time.",
+    arabic: "اللَّهُمَّ اغْفِرْ لَهُ وَارْحَمْهُ، وَعَافِهِ وَاعْفُ عَنْهُ، وَأَكْرِمْ نُزُلَهُ، وَوَسِّعْ مُدْخَلَهُ",
+    translit: "Allahummaghfir lahu warhamhu, wa 'afihi wa'fu 'anhu, wa akrim nuzulahu, wa wassi' mudkhalahu",
+    meaning: "O Allah, forgive him and have mercy on him, keep him safe and pardon him, make his place of rest honourable, and make his grave spacious.",
+    note: "From the Prophet's ﷺ funeral dua. For a mother, say: Allahummaghfir laha warhamha, wa 'afiha wa'fu 'anha, wa akrim nuzulaha, wa wassi' mudkhalaha. When a person dies, their deeds end except three, one of which is a righteous child who makes dua for them (Muslim 1631). A parent's rank in Paradise is raised because their child sought forgiveness for them (Ibn Majah 3660).",
+    source: "Muslim 963 · Muslim 1631 · Ibn Majah 3660"
+  },
+  {
     id: "wadud-basit",
     group: "Qur'an & Names of Allah",
     tag: "Names of Allah",
