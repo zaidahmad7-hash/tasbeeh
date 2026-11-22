@@ -23,10 +23,11 @@
 
   // ---------- tabs ----------
   function showView(name) {
+    const was = $('#view-' + name).classList.contains('active');
     $$('.view').forEach((v) => v.classList.toggle('active', v.id === 'view-' + name));
     $$('.tab').forEach((t) => t.classList.toggle('active', t.dataset.view === name));
-    store.set('view', name);
     if (name === 'tasbeeh') { scrollCarouselTo(dIdx, false); updateCounter(false); }
+    if (name === 'duas' && was && readerOpen()) closeDua();
   }
   $$('.tab').forEach((t) => t.addEventListener('click', () => showView(t.dataset.view)));
 
@@ -87,15 +88,16 @@
     goDua(e.clientX - r.left > r.width / 2 ? 1 : -1);
   });
   document.addEventListener('keydown', (e) => {
-    if (!$('#view-duas').classList.contains('active')) return;
+    if (!$('#view-duas').classList.contains('active') || !readerOpen()) return;
+    if (e.key === 'Escape') closeDua();
     if (e.key === 'ArrowRight') goDua(1);
     if (e.key === 'ArrowLeft') goDua(-1);
   });
   if (store.get('hintSeen', false)) $('#tap-hint').classList.add('gone');
 
   // index sheet + search
-  const sheet = $('#index-sheet');
   const search = $('#search');
+  let showCur = false; // highlight the last-read dua only after coming back from it
   const norm = (t) => String(t || '').toLowerCase()
     .normalize('NFD').replace(/[̀-ͯ]/g, '')          // latin accents
     .replace(/[ً-ٰٟۖ-ۭ]/g, '')         // arabic harakat
@@ -106,7 +108,7 @@
     weak: norm([d.when, d.translit, d.meaning, d.note, d.source, d.arabic, d.repeat, ...(d.lines || []).flat()].join(' '))
   }));
   const row = (d, i, sub) =>
-    `<li data-i="${i}" class="${i === duaIndex ? 'cur' : ''}"><span class="n">${i + 1}</span>` +
+    `<li data-i="${i}" class="${showCur && i === duaIndex ? 'cur' : ''}"><span class="n">${i + 1}</span>` +
     `<span class="t">${esc(d.title)}${sub ? `<small>${esc(d.group)}</small>` : ''}</span>` +
     `<span class="g" style="color:var(--${d.tone || 'gold'})">${esc(d.tag)}</span></li>`;
 
@@ -142,28 +144,45 @@
     $('#index-list').innerHTML = html;
   }
 
-  function openSheet(focusSearch) {
-    renderIndex();
-    sheet.hidden = false;
-    if (focusSearch) search.focus();
-    else { const c = $('#index-list .cur'); if (c) c.scrollIntoView({ block: 'center' }); }
-  }
-  function closeSheet() { sheet.hidden = true; search.blur(); }
+  // ---------- home list <-> reader ----------
+  const home = $('#duas-home'), reader = $('#duas-reader'), list = $('#index-list');
+  const readerOpen = () => !reader.hidden;
+  let homeScroll = 0;
 
-  $('#btn-index').addEventListener('click', () => openSheet(false));
-  $('#btn-search').addEventListener('click', () => openSheet(true));
-  search.addEventListener('input', () => { renderIndex(); $('#index-list').scrollTop = 0; });
+  function openDua(i) {
+    homeScroll = list.scrollTop;
+    search.blur();
+    duaIndex = i; showCur = true;
+    home.hidden = true; reader.hidden = false;
+    renderDua(1);
+    try { history.pushState({ dua: true }, ''); } catch (e) {}
+  }
+  function closeDua(fromHistory) {
+    if (!readerOpen()) return;
+    reader.hidden = true; home.hidden = false;
+    renderIndex();
+    list.scrollTop = homeScroll;
+    const c = list.querySelector('.cur');
+    if (c) {
+      const lr = list.getBoundingClientRect(), cr = c.getBoundingClientRect();
+      if (cr.top < lr.top || cr.bottom > lr.bottom) c.scrollIntoView({ block: 'center' });
+    }
+    if (!fromHistory && history.state && history.state.dua) { try { history.back(); } catch (e) {} }
+  }
+  window.addEventListener('popstate', () => { if (readerOpen()) closeDua(true); });
+
+  $('#btn-back').addEventListener('click', () => closeDua());
+  search.addEventListener('input', () => { renderIndex(); list.scrollTop = 0; });
   search.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') { const f = $('#index-list li[data-i]'); if (f) f.click(); }
-    if (e.key === 'Escape') closeSheet();
+    if (e.key === 'Enter') { const f = list.querySelector('li[data-i]'); if (f) f.click(); }
   });
   $('#search-clear').addEventListener('click', () => { search.value = ''; renderIndex(); search.focus(); });
-  $('#btn-close-index').addEventListener('click', closeSheet);
-  sheet.addEventListener('click', (e) => {
+  list.addEventListener('touchstart', () => { if (document.activeElement === search) search.blur(); }, { passive: true });
+  list.addEventListener('click', (e) => {
     const li = e.target.closest('li[data-i]');
-    if (li) { duaIndex = +li.dataset.i; renderDua(1); closeSheet(); }
-    else if (e.target === sheet) closeSheet();
+    if (li) openDua(+li.dataset.i);
   });
+  $('#home-sub').textContent = `${DUAS.length} duas · tap one to read`;
 
   // =========================================================
   //  TASBEEH
@@ -275,8 +294,8 @@
   });
 
   // ---------- start ----------
-  renderDua(0);
-  showView(store.get('view', 'duas'));
+  renderIndex();
+  showView('duas');
   window.addEventListener('resize', () => scrollCarouselTo(dIdx, false));
 
   if ('serviceWorker' in navigator && location.protocol === 'https:') {
