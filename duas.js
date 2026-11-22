@@ -612,6 +612,123 @@ const DUAS = [
     source: "Qur'an 71:10–12"
   },
   {
+    id: "shukr-alhamdulillah",
+    group: "Gratitude to Allah",
+    tag: "The best dua",
+    tone: "gold",
+    title: "Alhamdulillah",
+    when: "For every blessing, big or small — and the moment good news reaches you.",
+    arabic: "الْحَمْدُ لِلَّهِ",
+    translit: "Alhamdulillah",
+    meaning: "All praise and thanks are for Allah.",
+    note: "The Prophet ﷺ said: “Alhamdulillah fills the scale” (Muslim 223), and “the best dua is Alhamdulillah” (Tirmidhi 3383). When good news came to him, he would fall into sujud in thanks to Allah (Abu Dawud 2774).",
+    source: "Muslim 223 · Tirmidhi 3383 · Abu Dawud 2774"
+  },
+  {
+    id: "shukr-azidannakum",
+    group: "Gratitude to Allah",
+    tag: "Allah's promise",
+    tone: "sage",
+    title: "If you are grateful, I will give you more",
+    when: "A reminder of why gratitude matters.",
+    arabic: "وَإِذْ تَأَذَّنَ رَبُّكُمْ لَئِنْ شَكَرْتُمْ لَأَزِيدَنَّكُمْ ۖ وَلَئِنْ كَفَرْتُمْ إِنَّ عَذَابِي لَشَدِيدٌ",
+    translit: "Wa idh ta'adhdhana rabbukum la'in shakartum la'azidannakum, wa la'in kafartum inna 'adhabi lashadid",
+    meaning: "And remember when your Lord declared: “If you are grateful, I will surely give you more; but if you are ungrateful, My punishment is severe.”",
+    source: "Qur'an 14:7"
+  },
+  {
+    id: "shukr-ainni",
+    group: "Gratitude to Allah",
+    tag: "Help me be grateful",
+    tone: "gold",
+    title: "Help me remember You and thank You",
+    when: "After every prayer — asking Allah to help you be grateful.",
+    arabic: "اللَّهُمَّ أَعِنِّي عَلَىٰ ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ",
+    translit: "Allahumma a'inni 'ala dhikrika wa shukrika wa husni 'ibadatik",
+    meaning: "O Allah, help me to remember You, to thank You, and to worship You well.",
+    note: "The Prophet ﷺ told Mu'adh (RA) that he loved him, and advised him never to leave this after any prayer. (Also in the Prayer section.)",
+    source: "Abu Dawud 1522"
+  },
+  {
+    id: "sulayman",
+    group: "Gratitude to Allah",
+    tag: "Gratitude",
+    tone: "sage",
+    title: "Dua of Sulayman for gratitude",
+    when: "When you feel blessed and want to stay thankful.",
+    arabic: "رَبِّ أَوْزِعْنِي أَنْ أَشْكُرَ نِعْمَتَكَ الَّتِي أَنْعَمْتَ عَلَيَّ وَعَلَىٰ وَالِدَيَّ وَأَنْ أَعْمَلَ صَالِحًا تَرْضَاهُ وَأَدْخِلْنِي بِرَحْمَتِكَ فِي عِبَادِكَ الصَّالِحِينَ",
+    translit: "Rabbi awzi'ni an ashkura ni'matakal-lati an'amta 'alayya wa 'ala walidayya wa an a'mala salihan tardahu wa adkhilni birahmatika fi 'ibadikas-salihin",
+    meaning: "My Lord, inspire me to be grateful for the blessings You gave me and my parents, to do good that pleases You, and admit me by Your mercy among Your righteous servants.",
+    note: "Sulayman (AS) said this after hearing an ant warn its colony of his army.",
+    source: "Qur'an 27:19"
+  },
+  {
+    id: "shukr-fadli-rabbi",
+    group: "Gratitude to Allah",
+    tag: "Seeing a blessing",
+    tone: "sky",
+    title: "This is from the grace of my Lord",
+    when: "When you see a blessing in your life — a new home, a promotion, a success.",
+    arabic: "هَٰذَا مِنْ فَضْلِ رَبِّي لِيَبْلُوَنِي أَأَشْكُرُ أَمْ أَكْفُرُ",
+    translit: "Hadha min fadli rabbi, liyabluwani a'ashkuru am akfur",
+    meaning: "This is from the grace of my Lord, to test me whether I will be grateful or ungrateful.",
+    note: "Said by Sulayman (AS) when he saw the Queen of Sheba's throne placed before him in the blink of an eye.",
+    source: "Qur'an 27:40"
+  },
+  {
+    id: "shukr-kulli-hal",
+    group: "Gratitude to Allah",
+    tag: "Good times & hard times",
+    tone: "lavender",
+    title: "Praise in every situation",
+    when: "The first when something pleases you, the second when something upsets you.",
+    lines: [
+      ["الْحَمْدُ لِلَّهِ الَّذِي بِنِعْمَتِهِ تَتِمُّ الصَّالِحَاتُ","Alhamdulillahil-ladhi bi ni'matihi tatimmus-salihat","All praise is for Allah, by whose blessing good things are completed."],
+      ["الْحَمْدُ لِلَّهِ عَلَىٰ كُلِّ حَالٍ","Alhamdulillahi 'ala kulli hal","All praise is for Allah in every situation."]
+    ],
+    note: "Aisha (RA) said this is what the Prophet ﷺ would say when he saw something he liked, and when he saw something he disliked.",
+    source: "Ibn Majah 3803"
+  },
+  {
+    id: "shukr-afani",
+    group: "Gratitude to Allah",
+    tag: "Your wellbeing",
+    tone: "sage",
+    title: "When you see someone in difficulty",
+    when: "Quietly, when you see someone suffering an illness or hardship — never out loud to them.",
+    arabic: "الْحَمْدُ لِلَّهِ الَّذِي عَافَانِي مِمَّا ابْتَلَاكَ بِهِ، وَفَضَّلَنِي عَلَىٰ كَثِيرٍ مِمَّنْ خَلَقَ تَفْضِيلًا",
+    translit: "Alhamdulillahil-ladhi 'afani mimmab-talaka bihi, wa faddalani 'ala kathirin mimman khalaqa tafdila",
+    meaning: "All praise is for Allah who has kept me safe from what He has tested you with, and favoured me over much of His creation.",
+    note: "The Prophet ﷺ said whoever says this will be kept safe from that trial.",
+    source: "Tirmidhi 3432"
+  },
+  {
+    id: "shukr-hadana",
+    group: "Gratitude to Allah",
+    tag: "Guidance",
+    tone: "gold",
+    title: "Thanks for being guided",
+    when: "For the gift of iman, salah and guidance.",
+    arabic: "الْحَمْدُ لِلَّهِ الَّذِي هَدَانَا لِهَٰذَا وَمَا كُنَّا لِنَهْتَدِيَ لَوْلَا أَنْ هَدَانَا اللَّهُ",
+    translit: "Alhamdulillahil-ladhi hadana lihadha wa ma kunna linahtadiya lawla an hadanallah",
+    meaning: "All praise is for Allah who guided us to this. We would never have been guided if Allah had not guided us.",
+    note: "The words of the people of Paradise when they enter it.",
+    source: "Qur'an 7:43"
+  },
+  {
+    id: "barik",
+    group: "Gratitude to Allah",
+    tag: "Gratitude",
+    tone: "sage",
+    title: "When you succeed",
+    when: "When something goes well — instead of “I did it!”",
+    arabic: "اللَّهُمَّ بَارِكْ لِي فِي هَٰذَا",
+    translit: "Allahumma barik li fi hadha",
+    meaning: "O Allah, put blessing in this for me.",
+    note: "When Allah gives you something good, ask Him to put barakah in it. The Prophet ﷺ told the Companions to ask for blessing when they saw something they admired (Ibn Majah 3509).",
+    source: "General dua for barakah · see Ibn Majah 3509"
+  },
+  {
     id: "after-fajr",
     group: "Prayer",
     tag: "After Fajr",
@@ -967,7 +1084,7 @@ const DUAS = [
   },
   {
     id: "istighfar",
-    group: "Forgiveness & gratitude",
+    group: "Forgiveness",
     tag: "Forgiveness",
     tone: "blush",
     title: "Seeking forgiveness",
@@ -977,19 +1094,6 @@ const DUAS = [
     meaning: "I seek forgiveness from Allah, my Lord, for every sin, and I turn to Him in repentance.",
     note: "The Prophet ﷺ said he sought Allah's forgiveness and repented to Him more than seventy times a day.",
     source: "General istighfar · see Bukhari 6307"
-  },
-  {
-    id: "barik",
-    group: "Forgiveness & gratitude",
-    tag: "Gratitude",
-    tone: "sage",
-    title: "When you succeed",
-    when: "When something goes well — instead of “I did it!”",
-    arabic: "اللَّهُمَّ بَارِكْ لِي فِي هَٰذَا",
-    translit: "Allahumma barik li fi hadha",
-    meaning: "O Allah, put blessing in this for me.",
-    note: "A short way to turn a win back to the One who gave it, and ask that it stays good for you.",
-    source: "General dua for barakah"
   },
   {
     id: "wadud-basit",
@@ -1169,18 +1273,5 @@ const DUAS = [
     meaning: "Creator of the heavens and the earth, You are my protector in this world and the next. Let me die as a Muslim and join me with the righteous.",
     note: "Said by Yusuf (AS) at the height of his success, reunited with his family.",
     source: "Qur'an 12:101"
-  },
-  {
-    id: "sulayman",
-    group: "Duas of the Prophets",
-    tag: "Gratitude",
-    tone: "sage",
-    title: "Dua of Sulayman for gratitude",
-    when: "When you feel blessed and want to stay thankful.",
-    arabic: "رَبِّ أَوْزِعْنِي أَنْ أَشْكُرَ نِعْمَتَكَ الَّتِي أَنْعَمْتَ عَلَيَّ وَعَلَىٰ وَالِدَيَّ وَأَنْ أَعْمَلَ صَالِحًا تَرْضَاهُ وَأَدْخِلْنِي بِرَحْمَتِكَ فِي عِبَادِكَ الصَّالِحِينَ",
-    translit: "Rabbi awzi'ni an ashkura ni'matakal-lati an'amta 'alayya wa 'ala walidayya wa an a'mala salihan tardahu wa adkhilni birahmatika fi 'ibadikas-salihin",
-    meaning: "My Lord, inspire me to be grateful for the blessings You gave me and my parents, to do good that pleases You, and admit me by Your mercy among Your righteous servants.",
-    note: "Sulayman (AS) said this after hearing an ant warn its colony of his army.",
-    source: "Qur'an 27:19"
   }
 ];
