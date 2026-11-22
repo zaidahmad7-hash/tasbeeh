@@ -415,19 +415,6 @@ const DUAS = [
     source: "Qur'an 21:87 · Tirmidhi 3505"
   },
   {
-    id: "musa",
-    group: "Hardship & need",
-    tag: "Need",
-    tone: "sky",
-    title: "Dua of Prophet Musa",
-    when: "When you need something badly — a job, a home, a way forward.",
-    arabic: "رَبِّ إِنِّي لِمَا أَنْزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ",
-    translit: "Rabbi inni lima anzalta ilayya min khayrin faqir",
-    meaning: "My Lord, I am truly in need of whatever good You send down to me.",
-    note: "Musa (AS) said this alone and penniless in Madyan, after helping two women water their flock. Soon after, he was given shelter, work and a family.",
-    source: "Qur'an 28:24"
-  },
-  {
     id: "nuh",
     group: "Hardship & need",
     tag: "Overwhelmed",
@@ -517,6 +504,112 @@ const DUAS = [
     meaning: "O Turner of hearts, keep my heart firm on Your religion.",
     note: "Umm Salamah (RA) said this was the dua the Prophet ﷺ made most often.",
     source: "Tirmidhi 3522"
+  },
+  {
+    id: "musa",
+    group: "Rizq",
+    tag: "Need",
+    tone: "sky",
+    title: "Dua of Prophet Musa",
+    when: "When you need something badly — a job, a home, a way forward.",
+    arabic: "رَبِّ إِنِّي لِمَا أَنْزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ",
+    translit: "Rabbi inni lima anzalta ilayya min khayrin faqir",
+    meaning: "My Lord, I am truly in need of whatever good You send down to me.",
+    note: "Musa (AS) said this alone and penniless in Madyan, after helping two women water their flock. Soon after, he was given shelter, work and a family.",
+    source: "Qur'an 28:24"
+  },
+  {
+    id: "rizq-fajr",
+    group: "Rizq",
+    tag: "Every morning",
+    tone: "gold",
+    title: "Good provision — after Fajr",
+    when: "Every morning after Fajr: beneficial knowledge, pure rizq and accepted deeds.",
+    arabic: "اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا، وَرِزْقًا طَيِّبًا، وَعَمَلًا مُتَقَبَّلًا",
+    translit: "Allahumma inni as'aluka 'ilman nafi'a, wa rizqan tayyiba, wa 'amalan mutaqabbala",
+    meaning: "O Allah, I ask You for knowledge that benefits, provision that is good, and deeds that are accepted.",
+    note: "The Prophet ﷺ said this after the salam of Fajr. (Also in the Prayer section.)",
+    source: "Ibn Majah 925"
+  },
+  {
+    id: "rizq-halal",
+    group: "Rizq",
+    tag: "Halal & debt",
+    tone: "sand",
+    title: "Enough halal — and freedom from debt",
+    when: "When money is tight, or a debt is weighing on you.",
+    arabic: "اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ، وَأَغْنِنِي بِفَضْلِكَ عَمَّنْ سِوَاكَ",
+    translit: "Allahummakfini bi halalika 'an haramik, wa aghnini bi fadlika 'amman siwak",
+    meaning: "O Allah, let what You have made halal be enough for me, so I need nothing haram, and by Your grace make me need no one but You.",
+    note: "Ali (RA) taught this to a man who could not pay what he owed, saying the Prophet ﷺ taught it to him: even with a debt the size of a mountain, Allah would settle it for you.",
+    source: "Tirmidhi 3563"
+  },
+  {
+    id: "rizq-ghina",
+    group: "Rizq",
+    tag: "Self-sufficiency",
+    tone: "sky",
+    title: "Guidance, taqwa, chastity and sufficiency",
+    when: "A short, complete dua the Prophet ﷺ used to make.",
+    arabic: "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْهُدَىٰ وَالتُّقَىٰ وَالْعَفَافَ وَالْغِنَىٰ",
+    translit: "Allahumma inni as'alukal-huda wat-tuqa wal-'afafa wal-ghina",
+    meaning: "O Allah, I ask You for guidance, mindfulness of You, chastity, and freedom from need.",
+    source: "Muslim 2721"
+  },
+  {
+    id: "rizq-warzuqni",
+    group: "Rizq",
+    tag: "Everything you need",
+    tone: "sage",
+    title: "Forgive me, guide me, provide for me",
+    when: "In sujud, between the two sujud, or any time.",
+    arabic: "اللَّهُمَّ اغْفِرْ لِي، وَارْحَمْنِي، وَاهْدِنِي، وَعَافِنِي، وَارْزُقْنِي",
+    translit: "Allahummaghfir li, warhamni, wahdini, wa 'afini, warzuqni",
+    meaning: "O Allah, forgive me, have mercy on me, guide me, keep me well, and provide for me.",
+    note: "The Prophet ﷺ taught this to new Muslims and said these words gather for you both your world and your Hereafter.",
+    source: "Muslim 2697"
+  },
+  {
+    id: "rizq-isa",
+    group: "Rizq",
+    tag: "Dua of Isa",
+    tone: "lavender",
+    title: "You are the best of providers",
+    when: "Whenever you ask Allah for provision.",
+    arabic: "وَارْزُقْنَا وَأَنْتَ خَيْرُ الرَّازِقِينَ",
+    translit: "Warzuqna wa anta khayrur-raziqin",
+    meaning: "And provide for us — You are the best of providers.",
+    note: "The closing words of the dua of Isa (AS) when he asked Allah to send down a table of food from the sky.",
+    source: "Qur'an 5:114"
+  },
+  {
+    id: "rizq-ibrahim",
+    group: "Rizq",
+    tag: "For your family",
+    tone: "blush",
+    title: "Ibrahim's dua for his family's provision",
+    when: "For your family's provision — so they stay grateful.",
+    arabic: "وَارْزُقْهُمْ مِنَ الثَّمَرَاتِ لَعَلَّهُمْ يَشْكُرُونَ",
+    translit: "Warzuqhum minath-thamarati la'allahum yashkurun",
+    meaning: "And provide them with fruits, so that they may be grateful.",
+    note: "Ibrahim (AS) asked this after leaving Hajar and Ismail in the barren valley of Makkah — and Makkah has never lacked provision since.",
+    source: "Qur'an 14:37"
+  },
+  {
+    id: "rizq-istighfar",
+    group: "Rizq",
+    tag: "Istighfar",
+    tone: "blush",
+    title: "Istighfar opens the doors of rizq",
+    when: "Make lots of istighfar when you want wealth, children or rain.",
+    lines: [
+      ["فَقُلْتُ اسْتَغْفِرُوا رَبَّكُمْ إِنَّهُ كَانَ غَفَّارًا","Faqultustaghfiru rabbakum innahu kana ghaffara","I said: seek forgiveness from your Lord — He is ever forgiving."],
+      ["يُرْسِلِ السَّمَاءَ عَلَيْكُمْ مِدْرَارًا","Yursilis-sama'a 'alaykum midrara","He will send down abundant rain upon you,"],
+      ["وَيُمْدِدْكُمْ بِأَمْوَالٍ وَبَنِينَ","wa yumdidkum bi amwalin wa banin","give you more wealth and children,"],
+      ["وَيَجْعَلْ لَكُمْ جَنَّاتٍ وَيَجْعَلْ لَكُمْ أَنْهَارًا","wa yaj'al lakum jannatin wa yaj'al lakum anhara","and give you gardens and rivers."]
+    ],
+    note: "Nuh (AS) told his people this. Use the Tasbeeh tab to count Astaghfirullah.",
+    source: "Qur'an 71:10–12"
   },
   {
     id: "after-fajr",

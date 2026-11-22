@@ -1,7 +1,7 @@
 // Offline support.
 // App files: always try the network first (so updates show straight away),
 // fall back to the saved copy when offline. Fonts: saved copy first.
-const CACHE = 'myduas-v11';
+const CACHE = 'myduas-v12';
 const SHELL = ['./', 'index.html', 'style.css', 'app.js', 'duas.js', 'dhikr.js',
   'manifest.webmanifest', 'icons/icon-180.png', 'icons/icon-512.png',
   'fonts/indopak.woff2', 'fonts/amiri-arabic-400-normal.woff2'];
