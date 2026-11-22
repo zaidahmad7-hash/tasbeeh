@@ -481,6 +481,19 @@ const DUAS = [
     source: "Bukhari 6369"
   },
   {
+    id: "istighfar",
+    group: "Hardship & need",
+    tag: "Forgiveness",
+    tone: "blush",
+    title: "Seeking forgiveness",
+    when: "When you catch yourself comparing — instead of “Why them and not me?”",
+    arabic: "أَسْتَغْفِرُ اللَّهَ رَبِّي مِنْ كُلِّ ذَنْبٍ وَأَتُوبُ إِلَيْهِ",
+    translit: "Astaghfirullaha rabbi min kulli dhanbin wa atubu ilayh",
+    meaning: "I seek forgiveness from Allah, my Lord, for every sin, and I turn to Him in repentance.",
+    note: "The Prophet ﷺ said he sought Allah's forgiveness and repented to Him more than seventy times a day.",
+    source: "General istighfar · see Bukhari 6307"
+  },
+  {
     id: "sahl",
     group: "Hardship & need",
     tag: "Difficulty",
@@ -1081,19 +1094,6 @@ const DUAS = [
     translit: "Rabbighfir li wa liwalidayya wa liman dakhala baytiya mu'minan wa lil-mu'minina wal-mu'minat",
     meaning: "My Lord, forgive me and my parents, whoever enters my home as a believer, and all believing men and women.",
     source: "Qur'an 71:28"
-  },
-  {
-    id: "istighfar",
-    group: "Forgiveness",
-    tag: "Forgiveness",
-    tone: "blush",
-    title: "Seeking forgiveness",
-    when: "When you catch yourself comparing — instead of “Why them and not me?”",
-    arabic: "أَسْتَغْفِرُ اللَّهَ رَبِّي مِنْ كُلِّ ذَنْبٍ وَأَتُوبُ إِلَيْهِ",
-    translit: "Astaghfirullaha rabbi min kulli dhanbin wa atubu ilayh",
-    meaning: "I seek forgiveness from Allah, my Lord, for every sin, and I turn to Him in repentance.",
-    note: "The Prophet ﷺ said he sought Allah's forgiveness and repented to Him more than seventy times a day.",
-    source: "General istighfar · see Bukhari 6307"
   },
   {
     id: "wadud-basit",
