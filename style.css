@@ -141,3 +141,36 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 #index-list li[data-i]:active{background:#1a1a1d}
 .back-btn{display:flex;align-items:center;gap:2px;color:var(--muted);font-size:13px;height:44px;margin-left:-8px;padding-right:6px;min-width:84px}
 #duas-reader .group-title{max-width:46vw}
+
+/* qibla */
+.tab-ic{height:23px;width:23px;margin:0 0 1px}
+.q-body{flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column;align-items:center;padding:4px 22px 16px;gap:12px}
+.q-status{font-family:var(--serif);font-size:22px;color:var(--text);text-align:center;min-height:30px;margin-top:4px}
+#view-qibla.aligned .q-status{color:var(--gold)}
+.q-wrap{position:relative;width:min(84vw,46vh,340px);aspect-ratio:1;margin-top:10px}
+.q-pointer{position:absolute;left:50%;top:-14px;width:20px;height:16px;transform:translateX(-50%);fill:var(--gold);z-index:2}
+.q-svg{width:100%;height:100%;overflow:visible}
+#q-dial{transition:transform .12s linear;transform-origin:0 0}
+#q-dial .ring{fill:#111113;stroke:var(--line);stroke-width:2}
+#q-dial .ring-in{fill:none;stroke:#1d1d21;stroke-width:1}
+#q-dial .tk{stroke:#3a3a40;stroke-width:1.2}
+#q-dial .tk-l{stroke:#6b675f;stroke-width:2}
+#q-dial .lt{fill:var(--muted);font:600 15px var(--sans);text-anchor:middle;dominant-baseline:central}
+#q-dial .lt-n{fill:var(--blush)}
+#q-dial .q-ray{stroke:var(--gold);stroke-width:1.5;stroke-dasharray:3 4;opacity:.6}
+#q-dial .kb{fill:#0b0b0c;stroke:var(--gold);stroke-width:1.5}
+#q-dial .kb-band{fill:var(--gold)}
+#q-dial .kb-door{fill:#c9a961;opacity:.8}
+#view-qibla.aligned #q-dial .ring{stroke:var(--gold);filter:drop-shadow(0 0 10px rgba(201,169,97,.45))}
+#view-qibla.aligned #q-dial .q-ray{opacity:1;stroke-dasharray:none}
+.q-center{position:absolute;inset:0;display:grid;place-content:center;text-align:center;pointer-events:none}
+.q-deg{font-family:var(--serif);font-size:40px;color:var(--text);line-height:1}
+.q-deg-sub{font-size:11.5px;color:var(--muted);margin-top:4px;letter-spacing:.04em}
+.q-info{font-size:13px;color:var(--muted);min-height:18px}
+.q-start{background:var(--gold);color:#0b0b0c;font-weight:600;font-size:15px;border-radius:999px;padding:12px 28px}
+.q-start[hidden]{display:none}
+.q-error{font-size:12.5px;color:var(--blush);text-align:center;max-width:340px}
+.q-error:empty{display:none}
+.q-warn{font-size:12.5px;color:var(--sand);text-align:center;max-width:340px}
+.q-warn[hidden]{display:none}
+.q-tip{font-size:11.5px;color:var(--faint);text-align:center;max-width:340px;line-height:1.5;margin-top:auto}

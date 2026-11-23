@@ -21,12 +21,15 @@
     }
   }
 
+  window.MyDuasHaptic = haptic;
+
   // ---------- tabs ----------
   function showView(name) {
     const was = $('#view-' + name).classList.contains('active');
     $$('.view').forEach((v) => v.classList.toggle('active', v.id === 'view-' + name));
     $$('.tab').forEach((t) => t.classList.toggle('active', t.dataset.view === name));
     if (name === 'tasbeeh') { scrollCarouselTo(dIdx, false); updateCounter(false); }
+    if (window.Qibla) { if (name === 'qibla') window.Qibla.onShow(); else window.Qibla.onHide(); }
     if (name === 'duas' && was && readerOpen()) closeDua();
   }
   $$('.tab').forEach((t) => t.addEventListener('click', () => showView(t.dataset.view)));

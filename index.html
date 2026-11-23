@@ -55,6 +55,31 @@
     </div>
   </section>
 
+  <!-- ───────── QIBLA ───────── -->
+  <section id="view-qibla" class="view">
+    <header class="topbar">
+      <div style="width:44px"></div>
+      <div class="top-title">Qibla</div>
+      <button id="q-refresh" class="icon-btn" aria-label="Update location" style="margin-right:-10px">
+        <svg viewBox="0 0 24 24" width="19" height="19"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 5v6h-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      </button>
+    </header>
+    <div class="q-body">
+      <div id="q-status" class="q-status">Tap below to find the Qibla</div>
+      <div class="q-wrap">
+        <svg class="q-pointer" viewBox="0 0 20 16"><path d="M10 0 L20 16 L0 16 Z"/></svg>
+        <svg class="q-svg" viewBox="-150 -150 300 300"><g id="q-dial"></g></svg>
+        <div class="q-center"><div id="q-bearing" class="q-deg">—</div><div id="q-bearing-sub" class="q-deg-sub">Qibla</div></div>
+      </div>
+      <div id="q-info" class="q-info"></div>
+      <button id="q-start" class="q-start">Find Qibla</button>
+      <div id="q-error" class="q-error"></div>
+      <div id="q-warn" class="q-warn" hidden>Compass needs calibrating — move your phone in a figure-8 a few times.</div>
+      <div id="q-nosensor" class="q-warn" hidden>No compass found on this device. Use the degrees above with a separate compass.</div>
+      <p class="q-tip">Hold your phone flat and away from metal or magnets. Turn until the Kaaba is under the gold arrow at the top. Your location stays on your phone.</p>
+    </div>
+  </section>
+
   <!-- ───────── TASBEEH ───────── -->
   <section id="view-tasbeeh" class="view">
     <header class="topbar">
@@ -88,6 +113,7 @@
 
   <nav class="tabbar">
     <button class="tab active" data-view="duas"><span class="tab-ar">دعاء</span><span>Duas</span></button>
+    <button class="tab" data-view="qibla"><svg class="tab-ic" viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="12" r="9.2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M12 4.6 L14.3 12 L12 19.4 L9.7 12 Z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M12 4.6 L14.3 12 L9.7 12 Z" fill="currentColor"/></svg><span>Qibla</span></button>
     <button class="tab" data-view="tasbeeh"><span class="tab-ar">تسبيح</span><span>Tasbeeh</span></button>
   </nav>
 
@@ -97,6 +123,8 @@
 
 <script src="duas.js"></script>
 <script src="dhikr.js"></script>
+<script src="vendor/geomag.js"></script>
+<script src="qibla.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
