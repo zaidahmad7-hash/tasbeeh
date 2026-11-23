@@ -19,16 +19,29 @@
     set(k, v) { try { localStorage.setItem('tasbeeh.' + k, JSON.stringify(v)); } catch (e) {} }
   };
 
+  // Exact direction on the WGS84 ellipsoid (GeographicLib), spherical formula as a fallback.
   function bearingTo(lat, lon) {
+    if (window.qiblaGeodesic) { try { return window.qiblaGeodesic(lat, lon, KAABA.lat, KAABA.lon).azimuth; } catch (e) {} }
     const p1 = rad(lat), p2 = rad(KAABA.lat), dl = rad(KAABA.lon - lon);
     const y = Math.sin(dl) * Math.cos(p2);
     const x = Math.cos(p1) * Math.sin(p2) - Math.sin(p1) * Math.cos(p2) * Math.cos(dl);
     return norm360(deg(Math.atan2(y, x)));
   }
   function distanceKm(lat, lon) {
+    if (window.qiblaGeodesic) { try { return window.qiblaGeodesic(lat, lon, KAABA.lat, KAABA.lon).km; } catch (e) {} }
     const p1 = rad(lat), p2 = rad(KAABA.lat), dp = p2 - p1, dl = rad(KAABA.lon - lon);
     const a = Math.sin(dp / 2) ** 2 + Math.cos(p1) * Math.cos(p2) * Math.sin(dl / 2) ** 2;
     return 6371 * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  }
+
+  // Android: heading of the phone's top edge when it is fairly flat; when held upright,
+  // the direction the back camera faces (W3C DeviceOrientation rotation matrix).
+  function androidHeading(a, b, g) {
+    const cA = Math.cos(rad(a)), sA = Math.sin(rad(a)), cB = Math.cos(rad(b || 0)), sB = Math.sin(rad(b || 0)),
+          cG = Math.cos(rad(g || 0)), sG = Math.sin(rad(g || 0));
+    if (Math.abs(sB) < 0.75) return norm360(deg(Math.atan2(-cB * sA, cA * cB)));
+    const vx = -(cG * sA * sB + cA * sG), vy = -(sA * sG - cA * cG * sB);
+    return norm360(deg(Math.atan2(vx, vy)));
   }
 
   // ---------- state ----------
@@ -37,7 +50,7 @@
   let decl = 0;                            // magnetic declination at loc (east +)
   let heading = null;                      // smoothed true heading
   let listening = false, started = false, gotEvent = false, aligned = false;
-  let noSensorTimer = null, evName = null, lowAccuracy = false;
+  let noSensorTimer = null, evName = null, lowAccuracy = false, dialRot = 0;
 
   function updateDecl() {
     decl = (loc && window.magDeclination) ? (window.magDeclination(loc.lat, loc.lon) || 0) : 0;
@@ -67,7 +80,7 @@
   function render() {
     const has = qibla != null;
     $('#q-start').hidden = started && has;
-    $('#q-bearing').textContent = has ? `${Math.round(qibla)}°` : '—';
+    $('#q-bearing').textContent = has ? `${qibla.toFixed(1)}°` : '—';
     $('#q-bearing-sub').textContent = has ? 'from North' : 'Qibla';
     if (has) {
       $('#q-kaaba-g').setAttribute('transform', `rotate(${qibla.toFixed(1)})`);
@@ -79,11 +92,15 @@
       $('#q-info').textContent = '';
     }
 
-    const rot = heading == null ? 0 : -heading;
-    $('#q-dial').style.transform = `rotate(${rot.toFixed(1)}deg)`;
+    const target = heading == null ? 0 : -heading;
+    dialRot += norm180(target - dialRot);            // turn the short way round, no spinning past 0°/360°
+    $('#q-dial').style.transform = `rotate(${dialRot.toFixed(1)}deg)`;
+    $('#q-phone').textContent = (has && heading != null) ? `Phone facing ${Math.round(heading)}° · Qibla ${qibla.toFixed(1)}°` : '';
 
     let status = '', ok = false;
-    if (!has) status = started ? 'Finding your location…' : 'Tap below to find the Qibla';
+    const atKaaba = has && distanceKm(loc.lat, loc.lon) < 0.08;
+    if (atKaaba) status = 'You are at the Kaaba';
+    else if (!has) status = started ? 'Finding your location…' : 'Tap below to find the Qibla';
     else if (heading == null) status = started && listening && !gotEvent ? 'Starting compass…'
       : (started ? `Face ${Math.round(qibla)}° from North (clockwise)` : 'Tap below to start the compass');
     else {
@@ -106,7 +123,7 @@
       lowAccuracy = typeof e.webkitCompassAccuracy === 'number' && (e.webkitCompassAccuracy < 0 || e.webkitCompassAccuracy > 25);
     } else if ((e.absolute || evName === 'deviceorientationabsolute') && e.alpha != null) {
       const so = (screen.orientation && screen.orientation.angle) || 0;
-      h = 360 - e.alpha + so;                                       // Android: alpha counter-clockwise from north
+      h = androidHeading(e.alpha, e.beta, e.gamma) + so;            // Android (tilt-aware)
     }
     if (h == null) return;
     gotEvent = true;
