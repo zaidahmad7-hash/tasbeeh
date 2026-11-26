@@ -175,3 +175,25 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .q-warn[hidden]{display:none}
 .q-tip{font-size:11.5px;color:var(--faint);text-align:center;max-width:340px;line-height:1.5;margin-top:auto}
 .q-phone{font-size:13px;color:var(--text);min-height:18px;font-variant-numeric:tabular-nums}
+
+/* listen */
+.home-head{align-items:center}
+.home-sub{margin-top:2px}
+.playall-btn{display:flex;align-items:center;gap:6px;background:var(--gold);color:#0b0b0c;font-weight:600;font-size:13.5px;border-radius:999px;padding:9px 16px}
+.row-play{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--gold);align-self:center}
+.row-play:active{background:#1d1d21}
+#index-list li[data-i]{align-items:center}
+#index-list li.playing{background:#17150f}
+#index-list li.playing .row-play{background:var(--gold);color:#0b0b0c;border-color:var(--gold)}
+.tag-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.listen-btn{display:flex;align-items:center;gap:5px;color:var(--gold);font-size:12.5px;border:1px solid color-mix(in srgb,var(--gold) 45%,transparent);border-radius:999px;padding:6px 12px}
+.speaking{transition:background .3s, box-shadow .3s;background:rgba(201,169,97,.07);box-shadow:0 0 0 8px rgba(201,169,97,.07);border-radius:6px}
+.player{position:absolute;left:0;right:0;bottom:calc(64px + var(--sb));height:60px;display:flex;align-items:center;gap:6px;padding:0 10px 0 8px;background:#141310;border-top:1px solid #2a2619;z-index:5}
+.player[hidden]{display:none}
+#app.has-player .view{bottom:calc(124px + var(--sb))}
+.pl-btn{width:40px;height:40px;display:grid;place-items:center;color:var(--text);flex:none}
+.pl-main{background:var(--gold);color:#0b0b0c;border-radius:50%;width:42px;height:42px}
+.pl-info{flex:1;min-width:0}
+.pl-title{font-size:14px;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pl-sub{font-size:11.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pl-chip{flex:none;font-size:11px;color:var(--gold);border:1px solid #3a3322;border-radius:999px;padding:5px 8px}

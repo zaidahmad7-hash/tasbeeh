@@ -26,8 +26,10 @@
     <!-- home: all duas + search -->
     <div id="duas-home" class="pane">
       <header class="home-head">
-        <div class="home-title">MyDuas</div>
-        <div id="home-sub" class="home-sub"></div>
+        <div><div class="home-title">MyDuas</div><div id="home-sub" class="home-sub"></div></div>
+        <button id="btn-playall" class="playall-btn" aria-label="Play all duas">
+          <svg viewBox="0 0 24 24" width="15" height="15"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg><span>Play all</span>
+        </button>
       </header>
       <div class="search-wrap">
         <svg viewBox="0 0 24 24" width="16" height="16"><circle cx="10.5" cy="10.5" r="6" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M15 15l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
@@ -112,6 +114,16 @@
     </div>
   </section>
 
+  <!-- player bar -->
+  <div id="player" class="player" hidden>
+    <button id="pl-toggle" class="pl-btn pl-main" aria-label="Pause"></button>
+    <div class="pl-info"><div id="pl-title" class="pl-title"></div><div id="pl-sub" class="pl-sub"></div></div>
+    <button id="pl-mode" class="pl-chip">Everything</button>
+    <button id="pl-speed" class="pl-chip">1×</button>
+    <button id="pl-next" class="pl-btn" aria-label="Next dua"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 5.5v13l9-6.5zM16 5.5h2.5v13H16z" fill="currentColor"/></svg></button>
+    <button id="pl-stop" class="pl-btn" aria-label="Stop"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  </div>
+
   <nav class="tabbar">
     <button class="tab active" data-view="duas"><span class="tab-ar">دعاء</span><span>Duas</span></button>
     <button class="tab" data-view="qibla"><svg class="tab-ic" viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="12" r="9.2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M12 4.6 L14.3 12 L12 19.4 L9.7 12 Z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M12 4.6 L14.3 12 L9.7 12 Z" fill="currentColor"/></svg><span>Qibla</span></button>
@@ -127,6 +139,7 @@
 <script src="vendor/geomag.js"></script>
 <script src="vendor/geodesic.js"></script>
 <script src="qibla.js"></script>
+<script src="player.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

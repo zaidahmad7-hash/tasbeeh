@@ -1,10 +1,10 @@
 // Offline support.
 // App files: always try the network first (so updates show straight away),
 // fall back to the saved copy when offline. Fonts: saved copy first.
-const CACHE = 'myduas-v19';
+const CACHE = 'myduas-v20';
 const SHELL = ['./', 'index.html', 'style.css', 'app.js', 'duas.js', 'dhikr.js',
   'manifest.webmanifest', 'icons/icon-180.png', 'icons/icon-512.png',
-  'qibla.js', 'vendor/geomag.js', 'vendor/geodesic.js',
+  'qibla.js', 'player.js', 'vendor/geomag.js', 'vendor/geodesic.js',
   'fonts/indopak.woff2', 'fonts/amiri-arabic-400-normal.woff2'];
 
 self.addEventListener('install', (e) => {
@@ -39,7 +39,8 @@ self.addEventListener('fetch', (e) => {
     return;
   }
 
-  // fonts and other cross-origin files
+  // fonts only (recitation audio streams straight from the network)
+  if (!/fonts\.(googleapis|gstatic)\.com/.test(req.url)) return;
   e.respondWith(caches.open(CACHE).then(async (cache) => {
     const hit = await cache.match(req);
     if (hit) return hit;

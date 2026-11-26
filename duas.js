@@ -8,6 +8,8 @@
 //  group: the section it appears under in the ☰ list.
 //  lines: optional [[arabic, transliteration, meaning], …] for line-by-line
 //         meaning (used instead of arabic/translit/meaning).
+//  audio / lineAudio: optional verse numbers (SSSAAA) for a real recitation of
+//         complete Qur'an verses ("-" = already recited in the line above).
 //  repeat / note are optional — delete the line if not needed.
 // ─────────────────────────────────────────────────────────────
 const DUAS = [
@@ -231,6 +233,7 @@ const DUAS = [
       ["وَيُمْدِدْكُمْ بِأَمْوَالٍ وَبَنِينَ","wa yumdidkum bi amwalin wa banin","give you more wealth and children,"],
       ["وَيَجْعَلْ لَكُمْ جَنَّاتٍ وَيَجْعَلْ لَكُمْ أَنْهَارًا","wa yaj'al lakum jannatin wa yaj'al lakum anhara","and give you gardens and rivers."]
     ],
+    lineAudio: ["071010","071011","071012","-"],
     note: "Nuh (AS) told his people this. Use the Tasbeeh tab to count Astaghfirullah.",
     source: "Qur'an 71:10–12"
   },
@@ -257,6 +260,7 @@ const DUAS = [
     arabic: "وَإِذْ تَأَذَّنَ رَبُّكُمْ لَئِنْ شَكَرْتُمْ لَأَزِيدَنَّكُمْ ۖ وَلَئِنْ كَفَرْتُمْ إِنَّ عَذَابِي لَشَدِيدٌ",
     translit: "Wa idh ta'adhdhana rabbukum la'in shakartum la'azidannakum, wa la'in kafartum inna 'adhabi lashadid",
     meaning: "And remember when your Lord declared: “If you are grateful, I will surely give you more; but if you are ungrateful, My punishment is severe.”",
+    audio: ["014007"],
     source: "Qur'an 14:7"
   },
   {
@@ -616,6 +620,7 @@ const DUAS = [
     arabic: "رَبِّ هَبْ لِي مِنَ الصَّالِحِينَ",
     translit: "Rabbi hab li minas-salihin",
     meaning: "My Lord, grant me a child from among the righteous.",
+    audio: ["037100"],
     note: "Allah answered with Ismail (AS).",
     source: "Qur'an 37:100"
   },
@@ -642,6 +647,7 @@ const DUAS = [
     arabic: "رَبِّ اجْعَلْنِي مُقِيمَ الصَّلَاةِ وَمِنْ ذُرِّيَّتِي رَبَّنَا وَتَقَبَّلْ دُعَاءِ",
     translit: "Rabbij'alni muqimas-salati wa min dhurriyyati, rabbana wa taqabbal du'a",
     meaning: "My Lord, make me one who establishes prayer, and my children too. Our Lord, accept my dua.",
+    audio: ["014040"],
     source: "Qur'an 14:40"
   },
   {
@@ -691,6 +697,7 @@ const DUAS = [
     arabic: "رَبَّنَا اغْفِرْ لِي وَلِوَالِدَيَّ وَلِلْمُؤْمِنِينَ يَوْمَ يَقُومُ الْحِسَابُ",
     translit: "Rabbanaghfir li wa liwalidayya wa lil-mu'minina yawma yaqumul-hisab",
     meaning: "Our Lord, forgive me, my parents and the believers on the Day the account is taken.",
+    audio: ["014041"],
     source: "Qur'an 14:41"
   },
   {
@@ -754,6 +761,7 @@ const DUAS = [
     arabic: "رَبَّنَا وَاجْعَلْنَا مُسْلِمَيْنِ لَكَ وَمِنْ ذُرِّيَّتِنَا أُمَّةً مُسْلِمَةً لَكَ وَأَرِنَا مَنَاسِكَنَا وَتُبْ عَلَيْنَا إِنَّكَ أَنْتَ التَّوَّابُ الرَّحِيمُ",
     translit: "Rabbana waj'alna muslimayni laka wa min dhurriyyatina ummatan muslimatan lak, wa arina manasikana wa tub 'alayna, innaka antat-tawwabur-rahim",
     meaning: "Our Lord, make us submit to You, and make from our descendants a nation that submits to You. Show us how to worship You, and accept our repentance. You are the Accepter of repentance, the Most Merciful.",
+    audio: ["002128"],
     note: "Said by Ibrahim and Ismail (AS) while building the Kaaba.",
     source: "Qur'an 2:128"
   },
@@ -830,6 +838,7 @@ const DUAS = [
     arabic: "رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِنْ لَدُنْكَ رَحْمَةً إِنَّكَ أَنْتَ الْوَهَّابُ",
     translit: "Rabbana la tuzigh qulubana ba'da idh hadaytana wa hab lana min ladunka rahmah, innaka antal-wahhab",
     meaning: "Our Lord, do not let our hearts turn away after You have guided us, and grant us mercy from Yourself. You are the Giver.",
+    audio: ["003008"],
     source: "Qur'an 3:8"
   },
   {
@@ -842,6 +851,7 @@ const DUAS = [
     arabic: "رَبَّنَا إِنَّكَ جَامِعُ النَّاسِ لِيَوْمٍ لَا رَيْبَ فِيهِ إِنَّ اللَّهَ لَا يُخْلِفُ الْمِيعَادَ",
     translit: "Rabbana innaka jami'un-nasi li yawmin la rayba fih, innallaha la yukhliful-mi'ad",
     meaning: "Our Lord, You will gather all people on a Day about which there is no doubt. Allah never breaks His promise.",
+    audio: ["003009"],
     source: "Qur'an 3:9"
   },
   {
@@ -866,6 +876,7 @@ const DUAS = [
     arabic: "رَبَّنَا آمَنَّا بِمَا أَنْزَلْتَ وَاتَّبَعْنَا الرَّسُولَ فَاكْتُبْنَا مَعَ الشَّاهِدِينَ",
     translit: "Rabbana amanna bima anzalta wattaba'nar-rasula faktubna ma'ash-shahidin",
     meaning: "Our Lord, we believe in what You have revealed and we follow the Messenger, so write us among those who bear witness.",
+    audio: ["003053"],
     note: "Said by the disciples of Isa (AS).",
     source: "Qur'an 3:53"
   },
@@ -905,6 +916,7 @@ const DUAS = [
     arabic: "رَبَّنَا إِنَّكَ مَنْ تُدْخِلِ النَّارَ فَقَدْ أَخْزَيْتَهُ وَمَا لِلظَّالِمِينَ مِنْ أَنْصَارٍ",
     translit: "Rabbana innaka man tudkhilin-nara faqad akhzaytah, wa ma liz-zalimina min ansar",
     meaning: "Our Lord, whoever You admit into the Fire, You have truly disgraced, and the wrongdoers will have no helpers.",
+    audio: ["003192"],
     source: "Qur'an 3:192"
   },
   {
@@ -917,6 +929,7 @@ const DUAS = [
     arabic: "رَبَّنَا إِنَّنَا سَمِعْنَا مُنَادِيًا يُنَادِي لِلْإِيمَانِ أَنْ آمِنُوا بِرَبِّكُمْ فَآمَنَّا رَبَّنَا فَاغْفِرْ لَنَا ذُنُوبَنَا وَكَفِّرْ عَنَّا سَيِّئَاتِنَا وَتَوَفَّنَا مَعَ الْأَبْرَارِ",
     translit: "Rabbana innana sami'na munadiyan yunadi lil-imani an aminu bi rabbikum fa'amanna. Rabbana faghfir lana dhunubana wa kaffir 'anna sayyi'atina wa tawaffana ma'al-abrar",
     meaning: "Our Lord, we heard a caller calling to faith: “Believe in your Lord,” and we believed. Our Lord, forgive us our sins, wipe away our bad deeds, and let us die among the righteous.",
+    audio: ["003193"],
     source: "Qur'an 3:193"
   },
   {
@@ -929,6 +942,7 @@ const DUAS = [
     arabic: "رَبَّنَا وَآتِنَا مَا وَعَدْتَنَا عَلَىٰ رُسُلِكَ وَلَا تُخْزِنَا يَوْمَ الْقِيَامَةِ إِنَّكَ لَا تُخْلِفُ الْمِيعَادَ",
     translit: "Rabbana wa atina ma wa'attana 'ala rusulika wa la tukhzina yawmal-qiyamah, innaka la tukhliful-mi'ad",
     meaning: "Our Lord, give us what You promised us through Your Messengers, and do not disgrace us on the Day of Resurrection. You never break Your promise.",
+    audio: ["003194"],
     source: "Qur'an 3:194"
   },
   {
@@ -1018,6 +1032,7 @@ const DUAS = [
     arabic: "رَبَّنَا إِنَّكَ تَعْلَمُ مَا نُخْفِي وَمَا نُعْلِنُ وَمَا يَخْفَىٰ عَلَى اللَّهِ مِنْ شَيْءٍ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ",
     translit: "Rabbana innaka ta'lamu ma nukhfi wa ma nu'lin, wa ma yakhfa 'alallahi min shay'in fil-ardi wa la fis-sama'",
     meaning: "Our Lord, You know what we hide and what we show. Nothing on earth or in the heavens is hidden from Allah.",
+    audio: ["014038"],
     note: "Part of the dua of Ibrahim (AS) in Makkah.",
     source: "Qur'an 14:38"
   },
@@ -1093,6 +1108,7 @@ const DUAS = [
     arabic: "رَبَّنَا وَأَدْخِلْهُمْ جَنَّاتِ عَدْنٍ الَّتِي وَعَدْتَهُمْ وَمَنْ صَلَحَ مِنْ آبَائِهِمْ وَأَزْوَاجِهِمْ وَذُرِّيَّاتِهِمْ إِنَّكَ أَنْتَ الْعَزِيزُ الْحَكِيمُ",
     translit: "Rabbana wa adkhilhum jannati 'adninil-lati wa'attahum wa man salaha min aba'ihim wa azwajihim wa dhurriyyatihim, innaka antal-'azizul-hakim",
     meaning: "Our Lord, admit them into the Gardens of Eden You promised them, along with the righteous among their parents, spouses and children. You are the Almighty, the All-Wise.",
+    audio: ["040008"],
     note: "Also from the angels' dua for the believers.",
     source: "Qur'an 40:8"
   },
@@ -1131,6 +1147,7 @@ const DUAS = [
     arabic: "رَبَّنَا لَا تَجْعَلْنَا فِتْنَةً لِلَّذِينَ كَفَرُوا وَاغْفِرْ لَنَا رَبَّنَا إِنَّكَ أَنْتَ الْعَزِيزُ الْحَكِيمُ",
     translit: "Rabbana la taj'alna fitnatan lilladhina kafaru waghfir lana rabbana, innaka antal-'azizul-hakim",
     meaning: "Our Lord, do not make us a trial for those who disbelieve, and forgive us, our Lord. You are the Almighty, the All-Wise.",
+    audio: ["060005"],
     source: "Qur'an 60:5"
   },
   {
@@ -1168,6 +1185,7 @@ const DUAS = [
     arabic: "وَالضُّحَىٰ ﴿١﴾ وَاللَّيْلِ إِذَا سَجَىٰ ﴿٢﴾ مَا وَدَّعَكَ رَبُّكَ وَمَا قَلَىٰ ﴿٣﴾ وَلَلْآخِرَةُ خَيْرٌ لَكَ مِنَ الْأُولَىٰ ﴿٤﴾ وَلَسَوْفَ يُعْطِيكَ رَبُّكَ فَتَرْضَىٰ ﴿٥﴾ أَلَمْ يَجِدْكَ يَتِيمًا فَآوَىٰ ﴿٦﴾ وَوَجَدَكَ ضَالًّا فَهَدَىٰ ﴿٧﴾ وَوَجَدَكَ عَائِلًا فَأَغْنَىٰ ﴿٨﴾ فَأَمَّا الْيَتِيمَ فَلَا تَقْهَرْ ﴿٩﴾ وَأَمَّا السَّائِلَ فَلَا تَنْهَرْ ﴿١٠﴾ وَأَمَّا بِنِعْمَةِ رَبِّكَ فَحَدِّثْ ﴿١١﴾",
     translit: "Wad-duha. Wal-layli idha saja. Ma wadda'aka rabbuka wa ma qala. Wa lal-akhiratu khayrul laka minal-ula. Wa lasawfa yu'tika rabbuka fatarda. Alam yajidka yatiman fa'awa. Wa wajadaka dallan fahada. Wa wajadaka 'a'ilan fa-aghna. Fa-ammal-yatima fala taqhar. Wa ammas-sa'ila fala tanhar. Wa amma bini'mati rabbika fahaddith.",
     meaning: "By the morning light, and by the night when it grows still — your Lord has not left you, nor is He displeased with you. What is coming will be better for you than what has passed, and your Lord will give you until you are content. Did He not find you an orphan and give you shelter? Find you lost and guide you? Find you in need and provide for you? So do not be harsh with the orphan, do not turn away the one who asks, and speak of your Lord's blessings.",
+    audio: ["093001","093002","093003","093004","093005","093006","093007","093008","093009","093010","093011"],
     note: "Revealed to comfort the Prophet ﷺ after a pause in revelation, when some said his Lord had abandoned him.",
     source: "Qur'an 93:1–11 · Bukhari 4950"
   },
@@ -1193,6 +1211,7 @@ const DUAS = [
     arabic: "رَبِّ نَجِّنِي وَأَهْلِي مِمَّا يَعْمَلُونَ",
     translit: "Rabbi najjini wa ahli mimma ya'malun",
     meaning: "My Lord, rescue me and my family from what they are doing.",
+    audio: ["026169"],
     note: "Lut (AS) said this about the people of his town; Allah saved him and his family.",
     source: "Qur'an 26:169"
   },
@@ -1206,6 +1225,7 @@ const DUAS = [
     arabic: "رَبِّ اشْرَحْ لِي صَدْرِي ﴿٢٥﴾ وَيَسِّرْ لِي أَمْرِي ﴿٢٦﴾ وَاحْلُلْ عُقْدَةً مِنْ لِسَانِي ﴿٢٧﴾ يَفْقَهُوا قَوْلِي ﴿٢٨﴾",
     translit: "Rabbishrah li sadri, wa yassir li amri, wahlul 'uqdatan min lisani, yafqahu qawli",
     meaning: "My Lord, open my chest for me, make my task easy for me, and untie the knot from my tongue so they understand what I say.",
+    audio: ["020025","020026","020027","020028"],
     note: "Musa (AS) asked this before being sent to face Pharaoh.",
     source: "Qur'an 20:25–28"
   },
@@ -1271,6 +1291,7 @@ const DUAS = [
     arabic: "إِنَّ اللَّهَ وَمَلَائِكَتَهُ يُصَلُّونَ عَلَى النَّبِيِّ ۚ يَا أَيُّهَا الَّذِينَ آمَنُوا صَلُّوا عَلَيْهِ وَسَلِّمُوا تَسْلِيمًا",
     translit: "Innallaha wa mala'ikatahu yusalluna 'alan-nabiyy, ya ayyuhal-ladhina amanu sallu 'alayhi wa sallimu taslima",
     meaning: "Allah and His angels send blessings upon the Prophet. O you who believe, send blessings upon him and greet him with peace.",
+    audio: ["033056"],
     source: "Qur'an 33:56"
   },
   {
@@ -1388,6 +1409,7 @@ const DUAS = [
       ["أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ","A'udhu billahi minash-shaytanir-rajim","I seek refuge in Allah from Satan, the rejected."],
       ["بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ","Bismillahir-Rahmanir-Rahim","In the name of Allah, the Most Gracious, the Most Merciful."]
     ],
+    lineAudio: [null,"001001"],
     source: "Qur'an 16:98 · Qur'an 1:1"
   },
   {
@@ -1407,6 +1429,7 @@ const DUAS = [
       ["غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ","Ghayril-maghdubi 'alayhim wa lad-dallin","not of those who earned Your anger, nor of those who went astray."],
       ["آمِين","Ameen","O Allah, accept."]
     ],
+    lineAudio: ["001002","001003","001004","001005","001006","001007","-",null],
     note: "The Prophet ﷺ said there is no prayer without Al-Fatiha. Allah answers each line: when you say “Guide us…”, He says “This is for My servant, and My servant will have what he asked” (Muslim 395).",
     source: "Qur'an 1 · Bukhari 756 · Muslim 395"
   },
@@ -1423,6 +1446,7 @@ const DUAS = [
       ["لَمْ يَلِدْ وَلَمْ يُولَدْ","Lam yalid wa lam yulad","He does not give birth, nor was He born."],
       ["وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ","Wa lam yakun lahu kufuwan ahad","And there is none comparable to Him."]
     ],
+    lineAudio: ["112001","112002","112003","112004"],
     note: "The Prophet ﷺ said it is equal to a third of the Qur'an.",
     source: "Qur'an 112 · Bukhari 5013"
   },
@@ -1438,6 +1462,7 @@ const DUAS = [
       ["فَصَلِّ لِرَبِّكَ وَانْحَرْ","Fasalli li rabbika wanhar","So pray to your Lord and sacrifice."],
       ["إِنَّ شَانِئَكَ هُوَ الْأَبْتَرُ","Inna shani'aka huwal-abtar","Truly, your enemy is the one cut off."]
     ],
+    lineAudio: ["108001","108002","108003"],
     source: "Qur'an 108"
   },
   {
@@ -1453,6 +1478,7 @@ const DUAS = [
       ["إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ","Illal-ladhina amanu wa 'amilus-salihat","except those who believe and do good deeds,"],
       ["وَتَوَاصَوْا بِالْحَقِّ وَتَوَاصَوْا بِالصَّبْرِ","wa tawasaw bil-haqqi wa tawasaw bis-sabr","and urge one another to truth and to patience."]
     ],
+    lineAudio: ["103001","103002","103003","-"],
     source: "Qur'an 103"
   },
   {
@@ -1469,6 +1495,7 @@ const DUAS = [
       ["وَمِنْ شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ","Wa min sharrin-naffathati fil-'uqad","from the evil of those who blow on knots,"],
       ["وَمِنْ شَرِّ حَاسِدٍ إِذَا حَسَدَ","Wa min sharri hasidin idha hasad","and from the evil of the envier when he envies."]
     ],
+    lineAudio: ["113001","113002","113003","113004","113005"],
     source: "Qur'an 113"
   },
   {
@@ -1486,6 +1513,7 @@ const DUAS = [
       ["الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ","Alladhi yuwaswisu fi sudurin-nas","who whispers into the hearts of people,"],
       ["مِنَ الْجِنَّةِ وَالنَّاسِ","Minal-jinnati wan-nas","from among jinn and mankind."]
     ],
+    lineAudio: ["114001","114002","114003","114004","114005","114006"],
     source: "Qur'an 114"
   },
   {

@@ -43,20 +43,22 @@
     const d = DUAS[duaIndex];
     const card = $('#dua-card');
     card.style.setProperty('--tone', 'var(--' + (d.tone || 'gold') + ')');
+    const PLAY_SVG = '<svg viewBox="0 0 24 24" width="14" height="14"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>';
     card.innerHTML =
-      `<div class="tag">${esc(d.tag)}</div>` +
-      `<h1 class="title">${esc(d.title)}</h1>` +
-      (d.when ? `<p class="when">${esc(d.when)}</p>` : '') +
+      `<div class="tag-row"><div class="tag">${esc(d.tag)}</div>` +
+      `<button class="listen-btn" data-listen="1" aria-label="Listen">${PLAY_SVG}<span>Listen</span></button></div>` +
+      `<h1 class="title" data-seg="title">${esc(d.title)}</h1>` +
+      (d.when ? `<p class="when" data-seg="when">${esc(d.when)}</p>` : '') +
       (d.lines
-        ? `<div class="lines">` + d.lines.map((l) =>
-            `<div class="line"><p class="l-ar" dir="rtl" lang="ar">${esc(l[0])}</p>` +
-            `<p class="l-tr">${esc(l[1])}</p><p class="l-mn">${esc(l[2])}</p></div>`).join('') + `</div>`
-        : `<p class="arabic ${d.arabic.length > 140 ? 'long' : ''}" dir="rtl" lang="ar">${esc(d.arabic)}</p>` +
+        ? `<div class="lines">` + d.lines.map((l, i) =>
+            `<div class="line"><p class="l-ar" dir="rtl" lang="ar" data-seg="l${i}ar">${esc(l[0])}</p>` +
+            `<p class="l-tr">${esc(l[1])}</p><p class="l-mn" data-seg="l${i}mn">${esc(l[2])}</p></div>`).join('') + `</div>`
+        : `<p class="arabic ${d.arabic.length > 140 ? 'long' : ''}" dir="rtl" lang="ar" data-seg="ar">${esc(d.arabic)}</p>` +
           `<p class="translit">${esc(d.translit)}</p>` +
-          `<p class="meaning">${esc(d.meaning)}</p>`) +
-      (d.repeat ? `<div class="repeat">Recite ${esc(d.repeat)}</div>` : '') +
-      (d.note ? `<p class="note">${esc(d.note)}</p>` : '') +
-      (d.source ? `<p class="source">${esc(d.source)}</p>` : '');
+          `<p class="meaning" data-seg="mn">${esc(d.meaning)}</p>`) +
+      (d.repeat ? `<div class="repeat" data-seg="rep">Recite ${esc(d.repeat)}</div>` : '') +
+      (d.note ? `<p class="note" data-seg="note">${esc(d.note)}</p>` : '') +
+      (d.source ? `<p class="source" data-seg="src">${esc(d.source)}</p>` : '');
     $('#dua-pos').textContent = `${duaIndex + 1} / ${DUAS.length}`;
     $('#dua-group').textContent = d.group || 'Duas';
     $('#dua-progress').style.width = ((duaIndex + 1) / DUAS.length) * 100 + '%';
@@ -70,6 +72,7 @@
   function goDua(step) {
     duaIndex = (duaIndex + step + DUAS.length) % DUAS.length; // wraps around
     renderDua(step);
+    if (window.Player && window.Player.isPlaying()) window.Player.follow(duaIndex);
     if (!store.get('hintSeen', false)) { store.set('hintSeen', true); $('#tap-hint').classList.add('gone'); }
   }
 
@@ -86,6 +89,8 @@
     }
   }, { passive: true });
   stage.addEventListener('click', (e) => {
+    if (e.target.closest('[data-listen]')) { window.Player.playOne(duaIndex); return; }
+    if (e.target.closest('button')) return;
     if (swiped) return;
     const r = stage.getBoundingClientRect();
     goDua(e.clientX - r.left > r.width / 2 ? 1 : -1);
@@ -110,8 +115,10 @@
     strong: norm([d.title, d.group, d.tag].join(' ')),
     weak: norm([d.when, d.translit, d.meaning, d.note, d.source, d.arabic, d.repeat, ...(d.lines || []).flat()].join(' '))
   }));
+  const ROW_PLAY = '<svg viewBox="0 0 24 24" width="13" height="13"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>';
   const row = (d, i, sub) =>
-    `<li data-i="${i}" class="${showCur && i === duaIndex ? 'cur' : ''}"><span class="n">${i + 1}</span>` +
+    `<li data-i="${i}" class="${showCur && i === duaIndex ? 'cur' : ''}${window.Player && window.Player.current() === i ? ' playing' : ''}">` +
+    `<button class="row-play" data-play="${i}" aria-label="Play ${esc(d.title)}">${ROW_PLAY}</button>` +
     `<span class="t">${esc(d.title)}${sub ? `<small>${esc(d.group)}</small>` : ''}</span>` +
     `<span class="g" style="color:var(--${d.tone || 'gold'})">${esc(d.tag)}</span></li>`;
 
@@ -182,10 +189,24 @@
   $('#search-clear').addEventListener('click', () => { search.value = ''; renderIndex(); search.focus(); });
   list.addEventListener('touchstart', () => { if (document.activeElement === search) search.blur(); }, { passive: true });
   list.addEventListener('click', (e) => {
+    const pb = e.target.closest('[data-play]');
+    if (pb) { const i = +pb.dataset.play; openDua(i); window.Player.playOne(i); return; }
     const li = e.target.closest('li[data-i]');
     if (li) openDua(+li.dataset.i);
   });
-  $('#home-sub').textContent = `${DUAS.length} duas · tap one to read`;
+  $('#home-sub').textContent = `${DUAS.length} duas`;
+  const visibleList = () => [...list.querySelectorAll('li[data-i]')].map((li) => +li.dataset.i);
+  $('#btn-playall').addEventListener('click', () => {
+    const q = visibleList(); if (!q.length) return;
+    openDua(q[0]); window.Player.playAll(q);
+  });
+  window.MyDuasUI = {
+    showPlaying(i) {
+      if (readerOpen()) { if (duaIndex !== i) { duaIndex = i; renderDua(1); } }
+      else { duaIndex = i; showCur = true; }
+      list.querySelectorAll('li[data-i]').forEach((li) => li.classList.toggle('playing', +li.dataset.i === i));
+    }
+  };
 
   // =========================================================
   //  TASBEEH
